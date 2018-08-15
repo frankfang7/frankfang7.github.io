@@ -1,0 +1,345 @@
+@charset "utf-8";
+html {
+	font-size: 62.5%;
+	/* 10÷16×100%=62.5% */
+}
+
+body {
+	margin: 0;
+	font-size: 1.4rem;
+	/* 1.4×10px=14px */
+}
+
+/* bootstrap */
+
+.page-header {
+	position: relative;
+	margin-top: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.page-header:after {
+	content: "";
+	width: 9rem;
+	height: 1px;
+	background: #a94442;
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+}
+
+.thumbnail .caption {
+	padding: .4rem;
+}
+
+/* fullPage */
+
+.fp-controlArrow.fp-prev {
+	border-right-color: #ddd;
+}
+
+.fp-controlArrow.fp-next {
+	border-left-color: #ddd;
+}
+
+/* 全局 */
+
+body {
+	background: #222;
+	color: #555;
+	font-family: "微软雅黑";
+}
+
+a {
+	color: #444;
+}
+
+a:hover {
+	color: #333;
+}
+
+/* 首页 */
+
+.home {
+	padding-top: 15rem;
+}
+
+.home h1 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	color: #fff;
+	font-size: 6em;
+	font-weight: normal;
+}
+
+.home h2 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: #ccc;
+	font-size: 3em;
+	font-weight: normal;
+}
+
+.home .logo {
+	width: 15rem;
+	height: 15rem;
+	margin: 2rem auto;
+}
+
+.home .logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.home h3 {
+	font-size: 1.5em;
+}
+
+.blink {
+	animation: blink 1s linear infinite;
+	animation-fill-mode: both;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.social-icons {
+	margin: 3rem 0 0;
+	padding: 0;
+}
+
+.social-icons>li {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.social-icons a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: #999 url(../images/social-icons.png) 0 0 no-repeat;
+	border-radius: 50%;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.social-icons a:hover {
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+
+.social-icons li.weibo a {
+	background-color: #e32428;
+	background-position: 0 0;
+}
+
+.social-icons li.sina a {
+	background-position: -100px 0;
+}
+
+.social-icons li.qq a {
+	background-color: #0188fb;
+	background-position: -200px 0;
+}
+
+.social-icons li.mail a {
+	background-color: #f82;
+	background-position: -300px 0;
+}
+
+.social-icons li.wx a {
+	background-color: #51c332;
+	background-position: -400px 0;
+}
+
+/* 内页 */
+
+.section {
+	padding-top: 10rem;
+}
+
+h1.page-title {
+	margin-bottom: 3rem;
+	background: url(../images/page-title-bg.gif) 0 center repeat-x;
+	font-size: 2em;
+	text-align: center;
+}
+
+h1.page-title span {
+	padding: 0 2rem;
+	background: #fafafa;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+h1.page-title span.bg2 {
+	background: #eee;
+}
+
+/* 作品 */
+
+.work .nav-tabs {
+	margin-bottom: 1rem;
+}
+
+.work-list .thumbnail .caption h5 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* 技能 */
+
+.services-list {
+	padding: 3rem 2rem 0;
+	text-align: center;
+}
+
+.services-list .services-icon {
+	width: 160px;
+	height: 160px;
+	margin: 0 auto;
+	background: #fff;
+	border: 5px solid #ddd;
+}
+
+/* 关于 */
+
+.about-img figure img {
+	width: 15rem;
+	height: 15rem;
+}
+
+.about .label {
+	line-height: 2.2em;
+}
+
+address {
+	margin-bottom: 1rem;
+	line-height: 2em;
+}
+
+.about figure img {
+	width: 30%;
+}
+
+/* 页脚 */
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 5rem;
+	padding-top: 1.5rem;
+	background: #222;
+	color: #666;
+}
+
+/* 弹出框 */
+
+.modal-body iframe {
+	border: none;
+}
+
+/* ===== 移动端 ===== */
+
+@media (max-width: 767px) {
+	.section {
+		padding-top: 1rem;
+	}
+	.home {
+		padding-top: 10rem;
+	}
+	#fp-nav.right {
+		right: .5rem;
+	}
+	.page-header {
+		margin: 0 0 5px;
+	}
+	.form-group {
+		margin-bottom: 5px;
+	}
+	.home h1 {
+		font-size: 3em;
+	}
+	.home h2 {
+		font-size: 2em;
+	}
+	.home .logo {
+		width: 10rem;
+		height: 10rem;
+	}
+	.home h3 {
+		font-size: 1em;
+	}
+	h1.page-title {
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+		font-size: 1.5em;
+	}
+	.services-list {
+		padding: 0 1rem;
+		text-align: center;
+	}
+	.services-list .services-icon {
+		width: 5rem;
+		height: 5rem;
+		border: 5px solid #ddd;
+	}
+	.services-list .services-icon img {
+		width: 100%;
+	}
+	.services-list .glyphicon {
+		font-size: 2em;
+		line-height: 5rem;
+	}
+	.services-list h4 {
+		margin-top: 5px;
+		margin-bottom: 2px;
+	}
+}
+
+/* ===== 非移动端各种屏 ===== */
+
+@media (min-width: 768px) and (max-height: 639px) {
+	.section {
+		padding-top: 1rem;
+	}
+	.home {
+		padding-top: 4rem;
+	}
+}
+
+@media (min-width: 768px) and (min-height: 640px) {
+	.section {
+		padding-top: 2rem;
+	}
+	.home {
+		padding-top: 5rem;
+	}
+}
+
+@media (min-width: 768px) and (min-height: 680px) {
+	.section {
+		padding-top: 5rem;
+	}
+	.home {
+		padding-top: 10rem;
+	}
+}
