@@ -1,0 +1,129 @@
+html {
+	font-size: 62.5%;	/* 10÷16×100%=62.5% */
+}
+body {
+	margin: 0;
+	color: #666;
+	font-size: 1.5rem;	/* 1.5×10px=16px */
+	font-family: "微软雅黑";
+	line-height: 1.5em;
+}
+.text-green {
+	color: rgb(0,126,55);
+}
+.page-header {
+	padding-bottom: 9px;
+	margin: 30px 0 12px;
+}
+.page-header-big {
+	position: relative;
+	margin-top: 30px;
+	margin-bottom: 12px;
+	padding-left: 1rem;
+	padding-bottom: 0.6rem;
+	border-bottom: 1px solid #ddd;
+	color: rgb(0,126,55);
+	/*font-size: 1.6em;*/
+	line-height: 1.5em;
+	font-weight: 600;
+}
+.page-header-big:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 0.5rem;
+	height: 3.2rem;
+	background-color: rgb(111,186,44);
+}
+/* swiper */
+.swiper-container {
+	width: 100%;
+	height: 120px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	
+	background-size: 100% auto !important;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+	bottom: 5px;
+}
+.swiper-pagination-bullet-active {
+	background: #fff;
+}
+.swiper-pagination-bullet {
+	background: #fff;
+}
+.swiper-button-prev, .swiper-button-next {
+	margin-top: -22px;
+	width: 10px;
+	height: 10px;
+	padding: 20px;
+	border-radius: 50%;
+	background-size: 30%;
+	background-color: rgba(0,0,0,.3);
+}
+.swiper-button-prev {
+	left: 50%;
+	margin-left: -575px;
+}
+.swiper-button-next {
+	right: 50%;
+	margin-right: -575px;
+}
+ @media (min-width: 768px) {
+.swiper-button-prev {
+	margin-left: -365px;
+}
+.swiper-button-next {
+	margin-right: -365px;
+}
+}
+ @media (min-width: 991px) {
+.swiper-button-prev {
+	margin-left: -475px;
+}
+.swiper-button-next {
+	margin-right: -475px;
+}
+}
+ @media (min-width: 1200px) {
+.swiper-button-prev {
+	margin-left: -575px;
+}
+.swiper-button-next {
+	margin-right: -575px;
+}
+}
+/* 关于我们 */
+.list {
+	padding-left: 1.5em;
+}
+/* 联系我们 */
+.contact-info {
+	line-height: 1.7em;
+}
+/* 合作伙伴 */
+.main {
+	margin-top: 20px;
+}
+.logo-list {
+	margin-top: 20px;
+}

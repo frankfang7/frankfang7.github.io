@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<!--<link href="css/mui.css" rel="stylesheet" />-->
+<link href="css/app.css" rel="stylesheet" />
+</head>
+<body>
+<!-- 摇一摇和跳转页面按钮 -->
+<div id="btns" style="position: absolute; right: 10px; top:10px; z-index: 91; display: none;">
+  <button type="button">摇一摇</button>
+  <button type="button">跳转页面</button>
+</div>
+<!-- /摇一摇和跳转页面按钮 -->
+<div class="main">
+  <div class="heading"><img src="images/heading1.png"></div>
+  <div class="qianhe qianhe-s"><img class="img-png" src="images/qianhe-s.png"><img class="img-gif" src="images/qianhe-s.gif"></div>
+  <div class="qianhe qianhe-m"><img class="img-png" src="images/qianhe-m.png"><img class="img-gif" src="images/qianhe-m.gif"></div>
+  <div class="qianhe qianhe-l"><img class="img-png" src="images/qianhe-l.png"><img class="img-gif" src="images/qianhe-l.gif"></div>
+  <div class="qianbi"><img src="images/qianbi1.png"></div>
+  <div class="bg-yuan"><img src="images/bg-circle.png"></div>
+  <div class="info"><img src="images/info1.png"></div>
+  <div class="info" id="info" style="display: none;"><img src="images/info2.png"></div>
+  <div class="risk-tip">市场有风险 | 投资需谨慎</div>
+</div>
+<!--<script src="js/mui.min.js"></script> --> 
+<script src="js/jquery-3.2.1.min.js"></script> 
+<script type="text/javascript">
+$('.qianhe').click(function(){	
+	$(this).animate({left:'28%', width:'44%', marginTop:'-65%'},600);
+	$(this).siblings('.qianhe').fadeOut(400);
+	$('.heading').fadeOut(400);
+	$('.info:eq(1)').fadeIn(400);
+	$('.bg-yuan').delay(200).fadeIn(400);
+	
+	//摇一摇和跳转页面按钮显示
+	$('#btns').delay(1000).show(0);
+	
+});
+//摇一摇和跳转页面按钮
+$('#btns button:eq(0)').click(function(){
+	$('.qianhe').addClass('animation');
+});
+$('#btns button:eq(1)').click(function(){
+	window.open('demo2.html', '_self');
+});
+
+</script>
+</body>
+</html>

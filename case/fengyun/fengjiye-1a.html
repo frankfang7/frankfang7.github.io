@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="Author" content="F.Fang">
+<meta name="Language" scheme="Language Codes" content="zh-CN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>上海电气智能风电</title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/skin-black.css" rel="stylesheet" id="skinCss">
+<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+</head>
+<body>
+<!-- ***** HEADER ***** -->
+<header id="header">
+  <div class="logo pull-left"><a href="index.html" title="上海电气智能风电风云"><img src="images/logo.png" width="120" height="30" alt="上海电气"> 智能风电<img src="images/logo-fengyun.png" width="40" height="30" alt="风云"></a> <small>智能监控系统</small></div>
+  <div class="wind-farm-name pull-left"><img src="tmp/user-logo.jpg"> 临港风电场</div>
+  <div class="member-info pull-right"><span href="#">admin</span> <span class="dropdown"><a href="javascript:;" title="信息" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span href="" class="glyphicon glyphicon-envelope"></span><sup class="red-dot"></sup> </a>
+    <ul class="dropdown-menu dropdown-menu-right">
+      <li><a href="javascript:;">信息第一条</a></li>
+      <li><a href="javascript:;">我是第二条信息</a></li>
+      <li><a href="javascript:;">点我点我！我是No.3</a></li>
+      <li><a href="javascript:;">我是最后一条</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="javascript:;">查看全部消息</a></li>
+    </ul>
+    </span> <a href="#" class="glyphicon glyphicon-cog" title="设置"></a> <a href="#" class="glyphicon glyphicon-log-out" title="退出"></a></div>
+  <ul class="skin-btn list-inline pull-right">
+    <li id="skinBlack" class="skin-btn-black active" title="黑"></li>
+    <li id="skinWhite" class="skin-btn-white" title="白"></li>
+    <li id="skinCyan" class="skin-btn-cyan" title="青"></li>
+    <li id="skinBlue" class="skin-btn-blue" title="蓝"></li>
+    <li id="skinGreen" class="skin-btn-green" title="绿"></li>
+    <li id="skinRed" class="skin-btn-red" title="红"></li>
+  </ul>
+</header>
+<!-- ***** /HEADER ***** --> 
+<!-- ***** ASIDE ***** -->
+<aside id="aside">
+  <div class="aside-arrow"><span class="glyphicon glyphicon-menu-left"></span></div>
+  <ul class="sidebar">
+    <li><a href="javascript:;"><span class="pull-right glyphicon glyphicon-plus-sign glyphicon-minus-sign"></span>风场视图</a>
+      <ul>
+        <li><a href="#"><span class="pull-right glyphicon glyphicon-plus glyphicon-minus"></span>风场主区</a>
+          <ul>
+            <li><a href="#" class="active">A01</a></li>
+            <li><a href="#">A02</a></li>
+            <li><a href="#">A03</a></li>
+            <li><a href="#">A04</a></li>
+            <li><a href="#">A05</a></li>
+            <li><a href="#">A06</a></li>
+            <li><a href="#">A07</a></li>
+            <li><a href="#">A08</a></li>
+            <li><a href="#">A09</a></li>
+            <li><a href="#">A10</a></li>
+            <li><a href="#">A11</a></li>
+            <li><a href="#">A12</a></li>
+            <li><a href="#">A13</a></li>
+            <li><a href="#">A14</a></li>
+            <li><a href="#">A15</a></li>
+            <li><a href="#">A16</a></li>
+            <li><a href="#">A17</a></li>
+            <li><a href="#">A18</a></li>
+            <li><a href="#">A19</a></li>
+            <li><a href="#">A20</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+<!-- ***** /ASIDE ***** --> 
+<!-- ***** NAV ***** -->
+<nav id="nav" class="nav-md">
+  <div class="bread-crumb"><a href="index.html" title="云端首页"><span class="glyphicon glyphicon-home"></span></a> &gt; <a href="home-map.html">智能监控</a> &gt; <a href="fengchang-3.html">监控</a> &gt; 风机页</div>
+  <ul class="nav-list clearfix">
+    <li><a href="fengchang-2.html" class="active">风场监控</span></a></li>    
+    <li><a href="fengchangjieshao.html">风场介绍</a></li>
+  </ul>
+</nav>
+<!-- ***** /NAV ***** --> 
+<!-- ***** ARTICLE ***** -->
+<article id="article" class="article-md clearfix"> 
+  <!-- MAIN -->
+  <div class="main clearfix"> 
+    <!-- 信息栏 -->
+    <div class="info-panel clearfix">风电状态：<span class="text-success">发电</span>&nbsp;&nbsp;故障状态：<span class="text-success glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;通讯状态：<span class="text-danger glyphicon glyphicon-exclamation-sign"></span>&nbsp;&nbsp;报警状态：<span class="text-success glyphicon glyphicon-ok-sign"></span>
+      <div class="dropdown pull-right icon-voice"><a class="dropdown-toggle" href="javascript:;" title="关闭语音" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-hover="dropdown"><span class="glyphicon glyphicon-volume-up"></span><sup class="red-dot"></sup></a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><a href="#">关闭语音</a></li>
+          <li><a href="#">语音确定</a></li>
+        </ul>
+      </div>
+      <form class="pull-right form-inline">
+        <label>视图：</label>
+        <select class="form-control input-sm" name="" onchange="location.href=this.options[this.selectedIndex].value;">
+          <option value="fengjiye-1a.html" selected>机舱视图</option>
+          <option value="fengjiye-2.html">列表模式</option>
+        </select>
+      </form>
+      <div class="pull-right ctrl-btn-group">
+        <button type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play"></span> 启动</button>
+        &nbsp;
+        <button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-stop"></span> 停止</button>
+        &nbsp;
+        <button type="button" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-repeat"></span> 复位</button>
+        &nbsp;
+        <button type="button" class="btn btn-default btn-sm" data-toggle="popover" title="" data-placement="bottom" data-html="true" data-content='<h5>有功状态： 当前：100%</h5>
+                <form class="form-inline" style="margin-bottom: 10px;">
+                  <div class="form-group form-group-sm">
+                    <label for="exampleInputName2">有功功率：</label><input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2"> % <input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2"> KW</div>
+                </form>
+                <form>
+                  <div class="form-group form-group-sm">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="">设置</button>
+                    <button type="button" class="btn btn-default btn-sm" onclick="">取消</button>
+                  </div>
+                </form>
+                <h5>无功状态： 当前：0.95%</h5>
+                <form class="form-inline" style="margin-bottom: 10px;">
+                  <div class="form-group form-group-sm">
+                    <label for="exampleInputName2">有功功率：</label><input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2"> % <input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2" value=""> KW</div>
+                </form>
+                <form>
+                  <div class="form-group">
+                    <button type="button"  class="btn btn-primary btn-sm" onclick="">设置</button>
+                    <button type="button"  class="btn btn-default btn-sm" onclick="">取消</button>
+                  </div>
+                </form>'>控制 <span class="caret"></span> </button>
+        &nbsp;
+        <button type="button" class="btn btn-default btn-sm" data-toggle="popover" title="" data-placement="bottom" data-html="true" data-content='<h5>有功状态： 当前：100%</h5>
+                <form class="form-inline" style="margin-bottom: 10px;">
+                  <div class="form-group form-group-sm">
+                    <label for="exampleInputName2">有功功率：</label><input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2"> % <input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2"> KW</div>
+                </form>
+                <form>
+                  <div class="form-group form-group-sm">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="">设置</button>
+                    <button type="button" class="btn btn-default btn-sm" onclick="">取消</button>
+                  </div>
+                </form>
+                <h5>无功状态： 当前：0.95%</h5>
+                <form class="form-inline" style="margin-bottom: 10px;">
+                  <div class="form-group form-group-sm">
+                    <label for="exampleInputName2">有功功率：</label><input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2"> % <input class="form-control" type="text" name="ygpower" id="ygpower" maxlength="8" size="2" value=""> KW</div>
+                </form>
+                <form>
+                  <div class="form-group">
+                    <button type="button"  class="btn btn-primary btn-sm" onclick="">设置</button>
+                    <button type="button"  class="btn btn-default btn-sm" onclick="">取消</button>
+                  </div>
+                </form>'>限功率 <span class="caret"></span> </button>
+      </div>
+    </div>
+    <!-- /信息栏 --> 
+    <!-- 风机页左侧 -->
+    <div class="col-fan-left">
+      <div class="fan-image">
+        <ul class="fan-txt fan01-txt">
+          <li id="fan-01"><a href="#" data-toggle="tooltip" data-placement="top" title="齿轮箱"></a></li>
+          <li id="fan-02"><a href="#" data-toggle="tooltip" data-placement="top" title="主轴"></a></li>
+          <li id="fan-03"><a href="#" data-toggle="tooltip" data-placement="top" title="偏航系统"></a></li>
+          <li id="fan-04"><a href="#" data-toggle="tooltip" data-placement="top" title="叶轮"></a></li>
+          <li id="fan-05"><a href="#" data-toggle="tooltip" data-placement="top" title="变桨"></a></li>
+          <li id="fan-06"><a href="#" data-toggle="tooltip" data-placement="top" title="塔架"></a></li>
+          <li id="fan-07"><a href="#" data-toggle="tooltip" data-placement="top" title="变流器"></a></li>
+          <li id="fan-08"><a href="#" data-toggle="tooltip" data-placement="top" title="气象信息"></a></li>
+          <li id="fan-09"><a href="#" data-toggle="tooltip" data-placement="top" title="发电机"></a></li>
+          <li id="fan-10"><a href="#" data-toggle="tooltip" data-placement="top" title="机舱"></a></li>
+          <li id="fan-11"><a href="#" data-toggle="tooltip" data-placement="top" title="电器控制柜"></a></li>
+          <li id="fan-12"><a href="#" data-toggle="tooltip" data-placement="top" title="冷却风扇"></a></li>
+          <li id="fan-13"><a href="#" data-toggle="tooltip" data-placement="top" title="电网"></a></li>
+          <li id="fan-14"><a href="#" data-toggle="tooltip" data-placement="top" title="箱变"></a></li>
+        </ul>
+        <!--
+        --><span class="fan-name">F02001</span><!--
+        --><a id="btn-video-01" href="javascript:;" style="position: absolute; right: 7px; top: 7px; font-size: 0.9em;"><span class="glyphicon glyphicon-facetime-video"></span> 监控1</a><!--
+        --><a id="btn-video-02" href="javascript:;" style="position: absolute; right: 7px; bottom: 7px; font-size: 0.9em;"><span class="glyphicon glyphicon-facetime-video"></span> 监控2</a><!--
+        --><img src="images/fan01-image.png" width="520" height="300"></div>
+      <table class="table table-bordered table-striped table-condensed table-hover">
+        <caption>
+        固定信息
+        </caption>
+        <thead>
+          <tr>
+            <th>名称</th>
+            <th>数值</th>
+            <th>名称</th>
+            <th>数值</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>发电机转速</th>
+            <td>1010.2RPM</td>
+            <th>有功功率</th>
+            <td>73KW</td>
+          </tr>
+          <tr>
+            <th scope="row">风轮转速</th>
+            <td>8.59RPM</td>
+            <th>无功功率</th>
+            <td>-1KVar</td>
+          </tr>
+          <tr>
+            <th scope="row">齿轮箱高速轴承温度</th>
+            <td>40.5°C</td>
+            <th>电网A相频率</th>
+            <td>50HZ</td>
+          </tr>
+          <tr>
+            <th scope="row">齿轮箱低速轴承温度</th>
+            <td>40.5°C</td>
+            <th>电网B相频率</th>
+            <td>50HZ</td>
+          </tr>
+          <tr>
+            <th scope="row">齿轮箱油温</th>
+            <td>40.5°C</td>
+            <th>电网C相频率</th>
+            <td>50HZ</td>
+          </tr>
+          <!--<tr>
+            <th scope="row">齿轮箱低速轴承温度</th>
+            <td>40.5°C</td>
+            <th>电网B相频率</th>
+            <td>50HZ</td>
+          </tr>-->
+        </tbody>
+      </table>
+      <div class="mCustomScrollbar" data-mcs-theme="3d" style="height: 182px; overflow-y: auto;">
+        <table class="table table-bordered table-striped table-condensed table-hover">
+          <caption>
+          实时故障报警
+          </caption>
+          <thead>
+            <tr>
+              <th>代码</th>
+              <th>采集码</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td scope="row">-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td scope="row">-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td scope="row">-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td scope="row">-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td scope="row">-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td scope="row">-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /风机页左侧 --> 
+    <!-- 风机页右侧 -->
+    <div class="col-fan-right">      
+      <!-- PANEL -->
+      <div class="panel panel-default">
+        <div class="panel-body" style=" height: 94px;">
+          <p><strong>机舱消防：</strong>
+            <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-play"></span> 机舱消防开启</button>
+            &nbsp;
+            <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-stop"></span> 机舱消防停止</button>
+          </p>
+          <p> <strong>塔筒消防：</strong>
+            <button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play"></span> 塔筒消防开启</button>
+            &nbsp;
+            <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-stop"></span> 塔筒消防停止</button>
+          </p>
+        </div>
+      </div>
+      <!-- /PANEL --> 
+      
+      <!-- PANEL -->
+      <div class="panel panel-default">
+        <div class="panel-body" style=" height: 54px;"><strong>请选择：</strong>
+          <button class="btn btn-default btn-sm">安全链复位</button>
+          <button class="btn btn-default btn-sm">安全链复位</button>
+          <button class="btn btn-default btn-sm">安全链复位</button>
+          <button class="btn btn-default btn-sm">安全链复位</button>
+        </div>
+      </div>
+      <!-- /PANEL --> 
+      
+      <!-- 视频监控 -->
+      <div id="video-01" class="panel panel-default" style="display: none;">
+        <div class="panel-heading">视频监控1</div>
+        <div class="panel-body text-center" style="height: 350px;"><img src="tmp/video-01s.jpg" width="480" height="320"></div>
+      </div>
+      <div id="video-02" class="panel panel-default" style="display: none;">
+        <div class="panel-heading">视频监控2</div>
+        <div class="panel-body text-center" style="height: 350px;"><img src="tmp/video-02s.jpg" width="480" height="320"></div>
+      </div>
+      <!-- /视频监控 --> 
+      <!-- 表格 -->
+      <div id="xbxx-table">
+        <table class="table table-bordered table-striped table-condensed table-hover">
+          <caption>
+          <div class="dropdown pull-right"><a href="javascript:;" class="btn btn-default btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">箱变控制命令 <span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#"><span class="text-success">低压断路器分闸开关</span></a></li>
+              <li><a href="#"><span class="text-danger">低压断路器合闸开关</span></a></li>
+              <li><a href="#"><span class="text-success">高压断路器分闸开关</span></a></li>
+              <li><a href="#"><span class="text-danger">高压断路器合闸开关</span></a></li>
+            </ul>
+          </div>
+          箱变信息
+          </caption>
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>数值</th>
+              <th>名称</th>
+              <th>数值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>发电机转速</th>
+              <td>1010.2RPM</td>
+              <th>有功功率</th>
+              <td>73KW</td>
+            </tr>
+            <tr>
+              <th scope="row">风轮转速</th>
+              <td>8.59RPM</td>
+              <th>无功功率</th>
+              <td>-1KVar</td>
+            </tr>
+            <tr>
+              <th scope="row">齿轮箱高速轴承温度</th>
+              <td>40.8℃</td>
+              <th>电网A相频率</th>
+              <td>50.05Hz</td>
+            </tr>
+            <tr>
+              <th scope="row">齿轮箱低速轴承温度</th>
+              <td>45.2℃</td>
+              <th>电网B相频率</th>
+              <td>50.05Hz</td>
+            </tr>
+            <tr>
+              <th scope="row">齿轮箱油温</th>
+              <td>34.7℃</td>
+              <th>电网C相频率</th>
+              <td>50.05Hz</td>
+            </tr>
+            <tr>
+              <th scope="row">齿轮箱冷却水温度</th>
+              <td>36.09℃</td>
+              <th>功率因数</th>
+              <td>-1</td>
+            </tr>
+            <tr>
+              <th scope="row">液压系统压力</th>
+              <td>150Par</td>
+              <th>电网A相电压</th>
+              <td>411.7V</td>
+            </tr>
+            <tr>
+              <th scope="row">电网C相电流</th>
+              <td>63A</td>
+              <th>电网B相电压</th>
+              <td>415.7V</td>
+            </tr>
+            <tr>
+              <th scope="row">有功设定值</th>
+              <td>100</td>
+              <th>电网C相电压</th>
+              <td>415.7V</td>
+            </tr>
+            <tr>
+              <th scope="row">功率因数设定值</th>
+              <td>1</td>
+              <th>电网A相电流</th>
+              <td>45A</td>
+            </tr>
+            <tr>
+              <th scope="row">有功设定值</th>
+              <td>100</td>
+              <th>电网B相电流</th>
+              <td>58A</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-right table-btn-more"><a href="javascript:;"><span>+</span> 查看更多</a></div>
+      </div>
+      <!-- /表格 --> 
+      <!-- 图表 -->
+      <div class="panel panel-default">
+        <div class="panel-body" style="height: 250px;"><img src="tmp/gonglvquxian.png" class="img-responsive center-block"></div>
+      </div>
+      <!-- /图表 --> 
+      <!-- TAB标签 --> 
+      <a href="#" class="btn btn-default btn-sm pull-right"><span class="glyphicon glyphicon-refresh"></span> 故障刷新</a>
+      <ul id="myTabs" class="nav nav-tabs clearfix" role="tablist">
+        <li role="presentation" class="active"><a href="#tabCon1" id="tab1" role="tab" data-toggle="tab" aria-controls="tabCon1" aria-expanded="true">状态代码</a></li>
+        <li role="presentation"><a href="#tabCon2" role="tab" id="tab2" data-toggle="tab" aria-controls="tabCon2">操作记录</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active mCustomScrollbar" data-mcs-theme="3d" id="tabCon1" aria-labelledby="tab1" style="height: 126px; overflow-y: auto;">
+          <table class="table table-bordered table-striped table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>代码</th>
+                <th>采集码</th>
+                <th>描述</th>
+                <th>激活时间</th>
+                <th>复位时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>900011</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900012</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900013</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900014</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900015</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900016</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900017</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900018</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900019</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900020</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900021</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900022</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+              <tr>
+                <td>900023</td>
+                <td>101001</td>
+                <td>SCADA限功率</td>
+                <td>2015-10-16 15:05:38</td>
+                <td>2015-10-16 15:05:38</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div role="tabpanel" class="tab-pane fade mCustomScrollbar" data-mcs-theme="3d" id="tabCon2" aria-labelledby="tab2" style="height: 126px; overflow-y: auto;">
+          <table class="table table-bordered table-striped table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>-</th>
+                <td>-</td>
+                <th>-</th>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">-</th>
+                <td>-</td>
+                <th>-</th>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">-</th>
+                <td>-</td>
+                <th>-</th>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th>-</th>
+                <td>-</td>
+                <th>-</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- /TAB标签 --> 
+    </div>
+    <!-- /风机页右侧 --> 
+  </div>
+  <!-- /MAIN --> 
+</article>
+<!-- ***** /ARTICLE ***** --> 
+<!-- ***** FOOTER ***** -->
+<footer id="footer">版权所有  © 2015-2020  上海电气风电设备有限公司    建议使用IE9+ 浏览器  1280*1024 以上分辨率</footer>
+<!-- ***** /FOOTER ***** --> 
+<!-- MODAL -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">弹出框标题</h4>
+      </div>
+      <div class="modal-body">
+        <p>请确认是否对【2号风机】执行【机舱消防 开启】操作</p>
+        <form class="form-inline">
+          <label>请输入操作密码：</label>
+          <input class="form-control input-sm" type="password">
+          &nbsp;&nbsp;
+          <p class="form-control-static text-danger">密码格式不正确</p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">确认</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /MODAL --> 
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/jquery.cookie.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script>
+$(function(){
+	//显示隐藏视频监控
+	$("#btn-video-01").click(function(){
+		$("#video-01").toggle();
+		$("#video-02").hide();
+		if($("#video-01").is(":visible")){
+			$("#xbxx-table").hide();
+		}else{
+			$("#xbxx-table").show();
+		}
+	});
+	$("#btn-video-02").click(function(){
+		$("#video-02").toggle();
+		$("#video-01").hide();
+		if($("#video-02").is(":visible")){
+			$("#xbxx-table").hide();
+		}else{
+			$("#xbxx-table").show();
+		}
+	});
+	//“箱变信息”查看更多
+	$("#xbxx-table table tr:gt(5)").hide();
+	$("#xbxx-table .table-btn-more a").click(function(){				
+		var plusIcon = $(this).find("span").text();		
+		switch (plusIcon)
+		{
+		case "+":
+		  $(this).find("span").text("-");
+		  break;
+		case "-":
+		  $(this).find("span").text("+");
+		  break;
+		};				
+		$(this).parents("#xbxx-table").find("table>tbody>tr:gt(5)").toggle();
+	});
+	//弹出框
+	$('[data-toggle="popover"]').popover();
+	//风机图
+  	$('[data-toggle="tooltip"]').tooltip();	
+});
+</script>  
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script src="js/script.js"></script> 
+<!–[if IE]> 
+<script src="js/html5.js"></script> 
+<![endif]–> 
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>

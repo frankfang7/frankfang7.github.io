@@ -1,137 +1,59 @@
-(function($){
-  // Search
-  var $searchWrap = $('#search-form-wrap'),
-    isSearchAnim = false,
-    searchAnimDuration = 200;
+$(function() {
+	//slogan动画
+	showSlogan();
+	
+	//单页fullpage
+	$("#dowebok").fullpage({
+		sectionsColor: ['#222', '#fafafa', '#eee', '#fafafa'],
+		anchors: ['home', 'work', 'services', 'about'],
+		resize: false,
+		verticalCentered: false,
+		'navigation': true,
+		'navigationPosition': 'right',
+		'navigationTooltips': ['首页', '作品', '技能', '关于']
+	});	
+	
+	//模态框modal
+	var winHeight = $(window).height();
+	winHeight = winHeight - 185;
+	$(".modal-body").css({"max-height": winHeight,"overflow-y":"auto"});
+});
 
-  var startSearchAnim = function(){
-    isSearchAnim = true;
-  };
 
-  var stopSearchAnim = function(callback){
-    setTimeout(function(){
-      isSearchAnim = false;
-      callback && callback();
-    }, searchAnimDuration);
-  };
+//slogan动画
+var sloganTime = 2000;    //每条信息完整出现后停留时间
+var TextTime = 200;    //每条信息中的字出现的间隔时间
 
-  $('#nav-search-btn').on('click', function(){
-    if (isSearchAnim) return;
+var iSlogan = 0;
+var iText = 0;
+var textTimer;   //调用setInterval的返回值，用于取消对函数的周期性执行
+var sloganTimer;
 
-    startSearchAnim();
-    $searchWrap.addClass('on');
-    stopSearchAnim(function(){
-      $('.search-form-input').focus();
-    });
-  });
+var slogan = new Array();    //以数组形式保存每个信息的标题
 
-  $('.search-form-input').on('blur', function(){
-    startSearchAnim();
-    $searchWrap.removeClass('on');
-    stopSearchAnim();
-  });
+slogan[0] = "因为热爱，所以专注；因为专注，所以专业";   //显示在网页上的文字内容和对应的链接   
+slogan[1] = "不求与人相比，但求不断超越自己";
 
-  // Share
-  $('body').on('click', function(){
-    $('.article-share-box.on').removeClass('on');
-  }).on('click', '.article-share-link', function(e){
-    e.stopPropagation();
+function showSlogan(){
+	sSlogan=slogan[iSlogan];    //通过iSlogan传递，依次显示数组中的内容
+  
+	if(iText>=sSlogan.length){
+		clearInterval(textTimer);  //一旦超过要显示的文字长度，清除对showSlogan()的周期性调用
+		clearInterval(sloganTimer); 
+		iSlogan++;   //显示数组中的下一个
+   
+		if(iSlogan>=slogan.length){
+			iSlogan = 0;  //当iSlogan大于信息标题的数量时，把iSlogan清零，重新从第一个显示
+		}
+		
+		sloganTimer = setInterval("showSlogan()",sloganTime);   //间隔2000ms后重新调用showSlogan()
+		iText = 0;  
+		return;
+	};
 
-    var $this = $(this),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      id = 'article-share-box-' + $this.attr('data-id'),
-      offset = $this.offset();
-
-    if ($('#' + id).length){
-      var box = $('#' + id);
-
-      if (box.hasClass('on')){
-        box.removeClass('on');
-        return;
-      }
-    } else {
-      var html = [
-        '<div id="' + id + '" class="article-share-box">',
-          '<input class="article-share-input" value="' + url + '">',
-          '<div class="article-share-links">',
-            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-          '</div>',
-        '</div>'
-      ].join('');
-
-      var box = $(html);
-
-      $('body').append(box);
-    }
-
-    $('.article-share-box.on').hide();
-
-    box.css({
-      top: offset.top + 25,
-      left: offset.left
-    }).addClass('on');
-  }).on('click', '.article-share-box', function(e){
-    e.stopPropagation();
-  }).on('click', '.article-share-box-input', function(){
-    $(this).select();
-  }).on('click', '.article-share-box-link', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-  });
-
-  // Caption
-  $('.article-entry').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-
-      var alt = this.alt;
-
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-
-  if ($.fancybox){
-    $('.fancybox').fancybox();
-  }
-
-  // Mobile nav
-  var $container = $('#container'),
-    isMobileNavAnim = false,
-    mobileNavAnimDuration = 200;
-
-  var startMobileNavAnim = function(){
-    isMobileNavAnim = true;
-  };
-
-  var stopMobileNavAnim = function(){
-    setTimeout(function(){
-      isMobileNavAnim = false;
-    }, mobileNavAnimDuration);
-  }
-
-  $('#main-nav-toggle').on('click', function(){
-    if (isMobileNavAnim) return;
-
-    startMobileNavAnim();
-    $container.toggleClass('mobile-nav-on');
-    stopMobileNavAnim();
-  });
-
-  $('#wrap').on('click', function(){
-    if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
-
-    $container.removeClass('mobile-nav-on');
-  });
-})(jQuery);
+	clearInterval(textTimer);  
+	$("#slogan").html(sSlogan.substring(0,iText+1));   //截取字符，从第一个字符到iText+1个字符
+	 
+	iText++;  //文字一个个出现
+	textTimer = setInterval("showSlogan()",TextTime);   
+}

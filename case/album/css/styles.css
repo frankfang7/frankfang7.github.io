@@ -1,0 +1,78 @@
+html {
+	font-size: 62.5%;	/* 10÷16×100%=62.5% */
+}
+body {
+	margin: 0;
+	font-size: 1.4rem;	/* 1.4×10px=14px */
+}
+/* 首页 */
+html, body, .home-bg {
+	width: 100%;
+	height: 100%;
+}
+.home-bg {
+	position: relative;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+#time {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 1.6rem;
+	text-align: center;
+	line-height: 3rem;
+	background-color: rgba(128,128,128,.5);
+}
+#btnEnter {
+	position: absolute;
+	bottom: 10%;
+	width: 40%;
+	margin-left: 30%;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-radius: 0.5rem;
+	color: #fff;
+	font-size: 1.6rem;
+	background-color: rgba(255,255,255,.1);
+	border: 1px solid rgba(255,255,255,.3);
+}
+#btnEnter:focus {
+	outline: none;
+}
+/* 相册 */
+#header {
+	width: 100%;
+	height: 12rem;
+	background-size: auto 12rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#header.header-sm {
+	position: fixed;
+	width: 100%;
+	max-height: 8rem;
+	background-size: auto 8rem;
+}
+/* 画廊 */
+.my-gallery {
+	width: 100%;
+	float: left;
+}
+.my-gallery img {
+	width: 100%;
+	height: auto;
+}
+.my-gallery figure {
+	display: block;
+	float: left;
+	margin: 0 1px 0 0;
+	width: 33%;
+}
+.my-gallery figcaption {
+	display: none;
+}
