@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <link rel="stylesheet" href="./css/font-awesome.css">
+  <link rel="stylesheet" href="./css/element-ui.css">
+  <style>
+    body {
+      background-color: #444;
+      color: #666;
+      font-size: 14px;
+      line-height: 130%;
+      margin: 0;
+      padding: 15px 0;
+
+      --primary-rgb: 56, 181, 168;
+      --primary-color: #38b5a8;
+      --bg-color: #2f3a3d;
+    }
+
+    p {
+      margin: 0 0 15px;
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    .text-primary {
+      color: var(--primary-color);
+    }
+
+    .heading {
+      position: relative;
+      margin: 0 0 10px;
+      padding: 7px 10px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: normal;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      width: 827px;
+      /* height: 1170px; */
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .main .header {
+      display: flex;
+      width: 100%;
+      height: 210px;
+    }
+
+    .main .header>.left {
+      position: relative;
+      box-sizing: border-box;
+      width: 25%;
+      height: 100%;
+      background-color: var(--bg-color);
+      box-sizing: border-box;
+    }
+
+    .main .header>.left::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      content: "";
+    }
+
+    .main .header>.left .avatar {
+      position: absolute;
+      top: 23px;
+      right: 0;
+      bottom: 0;
+      left: 23px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main .header>.left .avatar img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: var(--primary-color);
+      border: 4px solid var(--primary-color);
+    }
+
+    .main .header>.right {
+      position: relative;
+      flex: 1;
+      box-sizing: border-box;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .main .header>.right .person-info {
+      position: absolute;
+      top: 23px;
+      right: 23px;
+      bottom: 0;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .main .header>.right .person-info h1 {
+      margin: 0 0 20px;
+      font-size: 32px;
+    }
+
+    .main .header>.right .person-info h2 {
+      margin: 0 0 20px;
+      font-size: 20px;
+    }
+
+    .main .header>.right .person-info h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .main .body {
+      display: flex;
+      box-sizing: border-box;
+      width: 100%;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    .main .body>.left {
+      box-sizing: border-box;
+      width: 25%;
+      padding: 15px 23px;
+      background-color: var(--bg-color);
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .main .body>.left .heading {
+      background-color: rgba(var(--primary-rgb), 0.2);
+    }
+
+    .main .body>.right {
+      box-sizing: border-box;
+      flex: 1;
+      padding: 25px 25px 25px 0;
+    }
+
+    .main .body>.right .heading {
+      z-index: 0;
+    }
+
+    .main .body>.right .heading::before {
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      border-top: 10px solid rgba(var(--primary-rgb), 0.3);
+      border-left: 10px solid transparent;
+      content: "";
+    }
+
+    .main .body>.right .heading::after {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: -10px;
+      content: "";
+      width: 160px;
+      height: 100%;
+      box-sizing: border-box;
+      border-top: 16px solid var(--primary-color);
+      border-right: 16px solid transparent;
+      border-bottom: 16px solid var(--primary-color);
+      border-left: 0 solid transparent;
+    }
+
+    .main .sidebar {
+      box-sizing: border-box;
+      width: 25%;
+      height: 100%;
+      background-color: var(--bg-color);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="main">
+      <div class="header">
+        <div class="left">
+          <div class="avatar">
+            <img src="./images/avatar.jpg" alt="Frank Fang">
+          </div>
+        </div>
+        <div class="right">
+          <div class="person-info">
+            <h1><span style="color: #000;">方志刚</span> Frank Fang</h1>
+            <h2 class="text-primary">Web前端开发 & UI/UX设计</h2>
+            <h3><i class="fa fa-wechat text-primary"></i> 17621440130 &nbsp; <i class="fa fa-envelope text-primary"></i> 45112230@qq.com &nbsp; <i class="fa fa-star text-primary"></i> <a href="https://frankfang7.github.io/#/resume" target="_blank" style="color: #666; text-decoration: none;">frankfang7.github.io/#/resume</a></h3>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="left">
+          <h3 class="heading"><i class="fa fa-id-card-o"></i> 个人资料</h3>
+          <p style="margin: 0 5px 20px;">出生年月：1982年11月<br>
+            户籍：上海市闵行区<br>
+            籍贯：湖北省鄂州市<br>
+            婚况：已婚已育</p>
+          <h3 class="heading"><i class="fa fa-desktop"></i> 专业技能</h3>
+          <div style="margin: 0 5px 25px;">
+            <div v-for="(item, index) in skillList" :key="index" style="margin-bottom: 15px;">
+              <div style="margin-bottom: 5px;">{{ item.name }} <small style="float: right; color: rgba(255, 255, 255, 0.3);">{{ item.value }}%</small></div>
+              <el-progress :percentage="item.value" color="var(--primary-color)" define-back-color="rgba(255, 255, 255, 0.2)" :stroke-width="2" :show-text="false"></el-progress>
+            </div>
+          </div>
+          <h3 class="heading"><i class="fa fa-comments-o"></i> 自我评价</h3>
+          <p style="margin: 5px;">本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。
+            待人友善，服从上级，做事尽心尽责，有较强团队精神。
+            早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！</p>
+        </div>
+        <div class="right">
+          <div class="heading"><i class="fa fa-suitcase"></i> 工作经验</div>
+          <el-timeline style="margin-top: 16px; padding-left: 20px;">
+            <el-timeline-item v-for="item,index in workList" timestamp="" color="var(--primary-color)"
+              style="padding-bottom: 10px;">
+              <h5 class="text-primary" style="margin: 0 0 5px; font-size: 14px; font-weight: normal;">{{
+                item.period }}</h5>
+              <h4 class="text-primary" style="margin: 0 0 5px; font-size: 15px;">{{ item.title }}</h4>
+              <p style="margin: 0;">{{ item.content }}</p>
+            </el-timeline-item>
+          </el-timeline>
+          <div class="heading"><i class="fa fa-graduation-cap"></i> 教育及培训</div>
+          <el-timeline style="margin-top: 16px; padding-left: 20px;">
+            <el-timeline-item v-for="item,index in educationList" timestamp="" color="var(--primary-color)" style="padding-bottom: 10px;">
+              <h5 class="text-primary" style="margin: 0 0 5px; font-size: 14px; font-weight: normal;">{{
+                item.period }}</h5>
+              <h4 class="text-primary" style="margin: 5px 0; font-size: 15px;">{{ item.title }}</h4>
+              <p style="margin: 5px 0;">{{ item.content }}</p>
+            </el-timeline-item>
+          </el-timeline>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/vue-2.6.13.js"></script>
+  <script src="./js/element-ui.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          skillList: [
+            {
+              name: 'Vue.js',
+              value: 80
+            },
+            {
+              name: 'Javascript',
+              value: 75
+            },
+            {
+              name: 'Element-ui',
+              value: 85
+            },
+            {
+              name: 'ECharts',
+              value: 80
+            },
+            {
+              name: 'Uni-app',
+              value: 30
+            },
+            {
+              name: 'HTML5 + CSS3',
+              value: 90
+            },
+            {
+              name: 'Adobe Photoshop',
+              value: 95
+            },
+            {
+              name: 'Adobe illustrator',
+              value: 80
+            }
+          ],
+          workList: [
+            {
+              period: '2020年3月 ~ 2024年8月',
+              title: '普华永道商务服务(上海)有限公司 | Web前端开发 & UI/UX设计',
+              content: '工作内容：负责UI/UX设计及Web前端开发；主要参与项目：某报告管理系统；某碳追踪管理系统；某油田碳资产管理系统；某几个地方政府小程序等等……'
+            },
+            {
+              period: '2018年4月 ~ 2020年3月',
+              title: '美数信息科技(上海)有限公司 | Web前端开发 & UI/UX设计',
+              content: '工作内容：负责UI/UX设计及Web前端开发；主要参与项目：某门禁机后台管理系统前端开发、APP及小程序的UI设计等等……'
+            },
+            {
+              period: '2015年9月 ~ 2018年4月',
+              title: '上海思芮科技发展有限公司(东软集团) | UI/UX设计 & Web前端开发',
+              content: '工作内容：UI/UX设计及Web前端开发；主要参与项目：某电气公司风电云管理系统；某交易中心门户和管理系统开发等等……'
+            },
+            {
+              period: '2011年8月 ~ 2015年9月',
+              title: '上海川合文化传播有限公司 | UI设计 & 网站美工',
+              content: '工作内容：各种Web页面、APP页面的设计、Flash动画设计制作等等……'
+            },
+            {
+              period: '2009年9月 ~ 2011年8月',
+              title: '上海极越信息技术有限公司 | UI设计 & 网站美工 & 平面设计',
+              content: '工作内容：网页设计、Flash动画设计制作，网站美工(CSS+DIV切图)等等……'
+            }
+          ],
+          educationList: [
+            {
+              period: '2024年6月 ~ 2024年11月',
+              title: '项目管理专业人士资格认证 | Project Management Professional(PMP)',
+              content: '课程内容：人员—强调与有效领导项目团队相关的技能和活动；过程—增强管理项目的技术领域；业务环境⸺ 突出项目和组织战略之间的联系；敏捷项目管理知识……'
+            },
+            {
+              period: '2019年3月 ~ 2021年7月',
+              title: '上海海事大学 | 计算机科学与技术(本科)',
+              content: '主要课程：电路与电子技术、数字逻辑、计算方法、计算机原理与汇编、微型计算机技术、计算机系统结构、计算机网络、高级语言、数据结构、操作系统、编译原理等……'
+            }
+          ]
+        }
+      },
+      methods: {
+      }
+    })
+  </script>
+</body>
+
+</html>
