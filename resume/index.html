@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Frank Fang</title>
   <link rel="icon" href="./../favicon.ico">
@@ -65,9 +65,9 @@
           <el-timeline style="margin-top: 16px; padding-left: 20px;">
             <el-timeline-item v-for="item,index in workList" timestamp="" color="var(--primary-color)"
               style="padding-bottom: 10px;">
-              <h5 class="text-primary" style="margin: 0 0 5px; font-size: 14px; font-weight: normal;">{{
+              <h5 class="text-primary" style="margin: 0 0 5px;">{{
                 item.date }}</h5>
-              <h4 class="text-primary" style="margin: 0 0 5px; font-size: 15px;"><span>{{ item.name }}</span> <small
+              <h4 class="text-primary" style="margin: 0 0 5px;"><span>{{ item.name }}</span> <small
                   style="font-weight: normal;">| {{ item.subName }}</small></h4>
               <p style="margin: 0;">{{ item.content }}</p>
             </el-timeline-item>
@@ -76,9 +76,9 @@
           <el-timeline style="margin-top: 16px; padding-left: 20px;">
             <el-timeline-item v-for="item,index in educationList" timestamp="" color="var(--primary-color)"
               style="padding-bottom: 10px;">
-              <h5 class="text-primary" style="margin: 0 0 5px; font-size: 14px; font-weight: normal;">{{
+              <h5 class="text-primary" style="margin: 0 0 5px;">{{
                 item.date }}</h5>
-              <h4 class="text-primary" style="margin: 5px 0; font-size: 15px;"><span class="text-primary">{{ item.name
+              <h4 class="text-primary" style="margin: 5px 0;"><span class="text-primary">{{ item.name
                   }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
               <p style="margin: 5px 0;">{{ item.content }}</p>
             </el-timeline-item>

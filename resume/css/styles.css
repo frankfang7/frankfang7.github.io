@@ -1,31 +1,37 @@
 
 html {
-  font-size: 15px;
+  height: 100%;
+  font-size: 100px;
 }
 
-/* 电脑端 */
-@media (min-width: 768px) {
+body {
+  height: 100%;
+}
+
+/* 手机端 */
+@media (max-width: 768px) {
   html {
-    font-size: 10px;
+    font-size: 50px;
   }
 }
 
 body {
   background-color: #444;
   color: #666;
-  font-size: 1.4rem;
+  font-size: 0.14rem;
   line-height: 130%;
   margin: 0;
-  padding: 15px 0;
+  padding: 0.15rem 0;
 
   --primary-rgb: 56, 181, 168;
   --primary-color: #38b5a8;
   --bg-color: #2f3a3d;
+  --heading-height: 0.34rem;
 }
 
 p {
-  margin: 0 0 15px;
-  font-size: 1.4rem;
+  margin: 0 0 0.15rem;
+  font-size: 0.14rem;
   line-height: 150%;
 }
 
@@ -49,27 +55,36 @@ a:hover {
 
 .heading {
   position: relative;
-  margin: 0 0 10px;
-  padding: 7px 10px;
+  height: var(--heading-height);
+  line-height: var(--heading-height);
+  margin: 0 0 calc(var(--heading-height) / 2);
+  padding: 0 calc(var(--heading-height) / 2);
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 0.15rem;
   font-weight: normal;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  min-width: 827px;
-  /* height: 1170px; */
+  max-width: 8.6rem;
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
 }
 
+/* 手机端 */
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 .main .header {
   display: flex;
   width: 100%;
-  height: 210px;
+  height: 2.1rem;
 }
 
 .main .header>.left {
@@ -93,18 +108,18 @@ a:hover {
 
 .main .header>.left .avatar {
   position: absolute;
-  top: 23px;
+  top: 0.23rem;
   right: 0;
   bottom: 0;
-  left: 23px;
+  left: 0.23rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .main .header>.left .avatar img {
-  width: 110px;
-  height: 110px;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 50%;
   overflow: hidden;
   background-color: var(--primary-color);
@@ -121,28 +136,28 @@ a:hover {
 
 .main .header>.right .person-info {
   position: absolute;
-  top: 23px;
-  right: 23px;
+  top: 0.23rem;
+  right: 0.23rem;
   bottom: 0;
-  left: 20px;
+  left: 0.20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .main .header>.right .person-info h1 {
-  margin: 0 0 20px;
-  font-size: 3.2rem;
+  margin: 0 0 0.20rem;
+  font-size: 0.32rem;
 }
 
 .main .header>.right .person-info h2 {
-  margin: 0 0 20px;
-  font-size: 2rem;
+  margin: 0 0 0.20rem;
+  font-size: 0.2rem;
 }
 
 .main .header>.right .person-info > div {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 0.14rem;
   font-weight: normal;
 }
 
@@ -157,7 +172,7 @@ a:hover {
 .main .body>.left {
   box-sizing: border-box;
   width: 25%;
-  padding: 15px 23px;
+  padding: 0.15rem 0.23rem;
   background-color: var(--bg-color);
   color: rgba(255, 255, 255, 0.6);
 }
@@ -168,7 +183,7 @@ a:hover {
 .main .body>.right {
   box-sizing: border-box;
   flex: 1;
-  padding: 25px 25px 25px 0;
+  padding: 0.25rem 0.25rem 0.25rem 0;
 }
 
 .main .body>.right .heading {
@@ -177,10 +192,10 @@ a:hover {
 
 .main .body>.right .heading::before {
   position: absolute;
-  bottom: -10px;
-  left: -10px;
-  border-top: 10px solid rgba(var(--primary-rgb), 0.3);
-  border-left: 10px solid transparent;
+  bottom: calc(0px - (var(--heading-height) / 2));
+  left: calc(0px - (var(--heading-height) / 2));
+  border-top: calc(var(--heading-height) / 2) solid rgba(var(--primary-rgb), 0.3);
+  border-left: calc(var(--heading-height) / 2) solid transparent;
   content: "";
 }
 
@@ -188,15 +203,24 @@ a:hover {
   position: absolute;
   z-index: -1;
   top: 0;
-  left: -10px;
+  left: calc(0px - (var(--heading-height) / 2));
   content: "";
-  width: 160px;
+  width: 1.60rem;
   height: 100%;
   box-sizing: border-box;
-  border-top: 16px solid var(--primary-color);
-  border-right: 16px solid transparent;
-  border-bottom: 16px solid var(--primary-color);
+  border-top: calc(var(--heading-height) / 2) solid var(--primary-color);
+  border-right: calc(var(--heading-height) / 2) solid transparent;
+  border-bottom: calc(var(--heading-height) / 2) solid var(--primary-color);
   border-left: 0 solid transparent;
+}
+
+.main .body>.right h5 {
+  font-size: 0.14rem;
+  font-weight: normal;
+}
+
+.main .body>.right h4 {
+  font-size: 0.15rem;
 }
 
 .main .sidebar {
