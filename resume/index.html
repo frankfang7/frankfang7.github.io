@@ -27,9 +27,9 @@
             <h2 class="text-primary">Web前端开发 & UI/UX设计</h2>
             <div>
               <el-popover placement="bottom" title="微信号：frankfang7" width="268" trigger="click">
-                <div style="padding: 20px 0 10px; text-align: center;">
+                <div class="p-4 pb-2" style="text-align: center;">
                   <img src="./images/weixin.jpg" alt="" width="198px">
-                  <div style="margin-top: 10px; color: #999;">扫一扫上面的二维码图案，加我为朋友。</div>
+                  <div class="mt-2" style="color: #999;">扫一扫上面的二维码图案，加我为朋友。</div>
                 </div>
                 <span slot="reference" style="cursor: pointer;"><i class="fa fa-wechat text-primary"></i>17621440130</span>
               </el-popover>
@@ -42,45 +42,36 @@
       <div class="body">
         <div class="left">
           <h3 class="heading"><i class="fa fa-id-card-o"></i> 个人资料</h3>
-          <p style="margin: 0 5px 20px;">出生年月：1982年11月<br>
-            户籍：上海市闵行区<br>
-            籍贯：湖北省鄂州市<br>
-            婚况：已婚已育</p>
+          <p class="ml-1 mr-1 mb-4">
+            <strong>出生：</strong>1982年11月<br>
+            <strong>户籍：</strong>上海市闵行区<br>
+            <strong>籍贯：</strong>湖北省鄂州市<br>
+            <strong>婚况：</strong>已婚已育</p>
           <h3 class="heading"><i class="fa fa-desktop"></i> 专业技能</h3>
-          <div style="margin: 0 5px 25px;">
-            <div v-for="(item, index) in skillList" :key="index" style="margin-bottom: 15px;">
-              <div style="margin-bottom: 5px;">{{ item.name }} <small
-                  style="float: right; color: rgba(255, 255, 255, 0.3);">{{ item.value }}%</small></div>
-              <el-progress :percentage="item.value" color="var(--primary-color)"
-                define-back-color="rgba(255, 255, 255, 0.2)" :stroke-width="2" :show-text="false"></el-progress>
+          <div class="ml-1 mr-1 mb-4">
+            <div v-for="(item, index) in skillList" :key="index" class="mb-3" :title="item.name + ':' + item.value + '%'">
+              <div class="mb-1">{{ item.name }}</div>
+              <el-progress :percentage="item.value" color="var(--primary-color)" define-back-color="rgba(255, 255, 255, 0.2)" :stroke-width="2" :show-text="false"></el-progress>
             </div>
           </div>
           <h3 class="heading"><i class="fa fa-comments-o"></i> 自我评价</h3>
-          <p style="margin: 5px;">本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。
-            待人友善，服从上级，做事尽心尽责，有较强团队精神。
-            早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！</p>
+          <p class="m-1">{{ selfComment }}</p>
         </div>
         <div class="right">
           <div class="heading"><i class="fa fa-suitcase"></i> 工作经验</div>
-          <el-timeline style="margin-top: 16px; padding-left: 20px;">
-            <el-timeline-item v-for="item,index in workList" timestamp="" color="var(--primary-color)"
-              style="padding-bottom: 10px;">
-              <h5 class="text-primary" style="margin: 0 0 5px;">{{
-                item.date }}</h5>
-              <h4 class="text-primary" style="margin: 0 0 5px;"><span>{{ item.name }}</span> <small
-                  style="font-weight: normal;">| {{ item.subName }}</small></h4>
+          <el-timeline class="mt-3 pl-4">
+            <el-timeline-item v-for="item,index in workList" timestamp="" color="var(--primary-color)" class="pb-2">
+              <h5 class="text-primary mb-1">{{ item.date }}</h5>
+              <h4 class="text-primary mb-1"><span>{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
               <p style="margin: 0;">{{ item.content }}</p>
             </el-timeline-item>
           </el-timeline>
           <div class="heading"><i class="fa fa-graduation-cap"></i> 教育及培训</div>
-          <el-timeline style="margin-top: 16px; padding-left: 20px;">
-            <el-timeline-item v-for="item,index in educationList" timestamp="" color="var(--primary-color)"
-              style="padding-bottom: 10px;">
-              <h5 class="text-primary" style="margin: 0 0 5px;">{{
-                item.date }}</h5>
-              <h4 class="text-primary" style="margin: 5px 0;"><span class="text-primary">{{ item.name
-                  }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
-              <p style="margin: 5px 0;">{{ item.content }}</p>
+          <el-timeline class="mt-3 pl-4">
+            <el-timeline-item v-for="item,index in educationList" timestamp="" color="var(--primary-color)" class="pb-2">
+              <h5 class="text-primary mb-1">{{ item.date }}</h5>
+              <h4 class="text-primary mt-1 mb-1"><span class="text-primary">{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
+              <p class="mt-1 mb-1">{{ item.content }}</p>
             </el-timeline-item>
           </el-timeline>
         </div>
@@ -94,6 +85,7 @@
       el: "#app",
       data() {
         return {
+          selfComment: '本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。待人友善，服从上级，做事尽心尽责，有较强团队精神。早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！',
           skillList: [
             {
               name: 'Vue.js',
