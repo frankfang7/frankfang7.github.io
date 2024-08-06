@@ -1,11 +1,12 @@
 
 html {
-  font-size: 10px;
+  font-size: 15px;
 }
 
-@media (max-width: 768px) {
+/* 电脑端 */
+@media (min-width: 768px) {
   html {
-    font-size: 15px;
+    font-size: 10px;
   }
 }
 
