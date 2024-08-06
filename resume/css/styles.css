@@ -11,8 +11,15 @@ body {
 /* 手机端 */
 @media (max-width: 768px) {
   html {
-    font-size: 50px;
+    font-size: 80px;
   }
+}
+
+:root {
+  --primary-rgb: 56, 181, 168;
+  --primary-color: #38b5a8;
+  --bg-color: #2f3a3d;
+  --heading-height: 0.34rem;
 }
 
 body {
@@ -21,12 +28,6 @@ body {
   font-size: 0.14rem;
   line-height: 130%;
   margin: 0;
-  padding: 0.15rem 0;
-
-  --primary-rgb: 56, 181, 168;
-  --primary-color: #38b5a8;
-  --bg-color: #2f3a3d;
-  --heading-height: 0.34rem;
 }
 
 p {
@@ -51,6 +52,26 @@ a:hover {
 
 .text-muted {
   color: #666;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
 }
 
 .m-1 {
@@ -217,7 +238,6 @@ a:hover {
   position: relative;
   height: var(--heading-height);
   line-height: var(--heading-height);
-  margin: 0 0 calc(var(--heading-height) / 2);
   color: #fff;
   font-size: 0.15rem;
   font-weight: normal;
@@ -230,14 +250,6 @@ a:hover {
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 0 0.15rem 0 rgba(0, 0, 0, 0.4);
-}
-
-/* 手机端 */
-@media (max-width: 768px) {
-  .main {
-    width: 100%;
-    max-width: 100%;
-  }
 }
 
 .main .header {
@@ -352,7 +364,7 @@ a:hover {
 
 .main .body>.right .heading::before {
   position: absolute;
-  bottom: calc(0px - (var(--heading-height) / 2));
+  top: var(--heading-height);
   left: calc(0px - (var(--heading-height) / 2));
   border-top: calc(var(--heading-height) / 2) solid rgba(var(--primary-rgb), 0.3);
   border-left: calc(var(--heading-height) / 2) solid transparent;
@@ -365,9 +377,9 @@ a:hover {
   top: 0;
   left: calc(0px - (var(--heading-height) / 2));
   content: "";
-  width: 1.60rem;
-  height: 100%;
-  box-sizing: border-box;
+  width: 1.6rem;
+  height: 0;
+  box-sizing: content-box;
   border-top: calc(var(--heading-height) / 2) solid var(--primary-color);
   border-right: calc(var(--heading-height) / 2) solid transparent;
   border-bottom: calc(var(--heading-height) / 2) solid var(--primary-color);
@@ -383,9 +395,14 @@ a:hover {
   font-size: 0.15rem;
 }
 
-.main .sidebar {
-  box-sizing: border-box;
-  width: 25%;
-  height: 100%;
-  background-color: var(--bg-color);
+
+/* 手机端 */
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+    max-width: 100%;
+  }
+  .main .left {
+    width: 33.33% !important;
+  }
 }
