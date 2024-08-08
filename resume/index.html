@@ -8,7 +8,6 @@
   <title>Frank Fang</title>
   <link rel="icon" href="./../favicon.ico">
   <link rel="stylesheet" href="./css/font-awesome.css">
-  <!-- <link rel="stylesheet" href="./css/element-ui.css"> -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -29,7 +28,7 @@
           </div>
           <div class="right">
             <div class="person-info">
-              <h1><span style="color: #000;">方志刚</span> Frank Fang</h1>
+              <h1><span style="color: #111;">方志刚</span> <small>Frank Fang</small></h1>
               <h2 class="text-primary">Web前端开发 & UI/UX设计</h2>
               <div>
                 <el-popover placement="bottom" width="268" trigger="click">
@@ -93,12 +92,14 @@
         </div>
     </template>
     </div>
-    <el-dialog :title="projectName" :visible.sync="projectDialog" width="90vw" :before-close="closeProject">
-      <span>这是一段信息</span>
+    <el-dialog :title="projectName" :visible.sync="projectDialog" width="860px" top="5vh" :before-close="closeProject">
+      <el-carousel indicator-position="outside" height="460px" :interval="5000">
+        <el-carousel-item v-for="item in projectUrlList" :key="item">
+          <el-image :src="'./images/projects/' + item" fit="contain"></el-image>
+        </el-carousel-item>
+      </el-carousel>
     </el-dialog>
   </div>
-  <!-- <script src="./js/vue.js"></script>
-  <script src="./js/element-ui.js"></script> -->
   <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script>
@@ -107,11 +108,9 @@
       data() {
         return {
           loading: true,
-          projectDialog: false,
-          projectName: '',
           // selfDescription: '本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。待人友善，服从上级，做事尽心尽责，有较强团队精神。早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！',
           selfDescription: [
-            '擅长根据业务需求，绘制各种UI原型图、UI高保真设计稿以及UX交互方案；',
+            '擅长根据业务需求，设计各种UI原型图、UI高保真设计稿以及UX交互方案；',
             '擅长使用Vue全家桶 / ElementUI / JavaScript / ECharts...进行Web前端开发，尤其擅长样式/布局/响应式/交互等界面表现层的开发；',
             '熟练使用Vue-cli / Git等常用开发工具；',
             '精通Photoshop / illustrator从事设计工作，包括UI设计、CSS切图、VI设计、平面设计等；'
@@ -156,7 +155,7 @@
               name: '普华永道商务服务(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
               content: '负责UI/UX设计及Web前端开发……',
-              projects: [ {id: 'pwc01', name: '某报告管理系统'},  {id: 'pwc02', name: '某碳追踪管理系统'},  {id: 'pwc03', name: '某油田碳资产管理系统'},  {id: 'pwc04', name: '某几个地方政府小程序'}],
+              projects: [ {imageList: ['pwc/10.jpg', 'pwc/11.jpg'], name: '某报告管理系统'},  {id: 'pwc02', name: '某碳追踪管理系统'},  {id: 'pwc03', name: '某油田碳资产管理系统'},  {id: 'pwc04', name: '某几个地方政府小程序'}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'Photoshop', 'Uni-App']
             },
             {
@@ -190,6 +189,9 @@
               tags: ['Photoshop', 'illustrator', 'Flash', 'HTML+CSS', 'jQuery']
             }
           ],
+          projectDialog: false,
+          projectName: '',
+          projectUrlList: [],
           educationList: [
             {
               date: '2024年6月 ~ 2024年11月',
@@ -210,7 +212,7 @@
         openProject (item) {
           this.projectDialog = true
           this.projectName = item.name
-          console.log(item.id)
+          this.projectUrlList = item.imageList
         },
         closeProject () {
           this.projectDialog = false
@@ -222,5 +224,4 @@
     })
   </script>
 </body>
-
 </html>
