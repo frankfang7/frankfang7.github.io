@@ -8,7 +8,8 @@
   <title>Frank Fang</title>
   <link rel="icon" href="./../favicon.ico">
   <link rel="stylesheet" href="./css/font-awesome.css">
-  <link rel="stylesheet" href="./css/element-ui.css">
+  <!-- <link rel="stylesheet" href="./css/element-ui.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -72,8 +73,8 @@
                 <el-timeline-item v-for="(item,index) in workList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
                   <h5 class="text-primary mt-0 mb-1">{{ item.date }}</h5>
                   <h4 class="text-primary mt-0 mb-1"><span>{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
-                  <div v-if="item.content"><strong class="text-muted">工作内容：</strong> {{ item.content }}</div>
-                  <div v-if="item.projects"><strong class="text-muted">参与项目：</strong><el-button v-for="(i, n) in item.projects" :key="n" type="text" size="small" class="m-0 p-1">{{ i }}</el-button></div>
+                  <div v-if="item.content" class="mb-1"><strong class="text-muted">工作内容：</strong> {{ item.content }}</div>
+                  <div v-if="item.projects"><strong class="text-muted">参与项目：</strong> <el-button v-for="(i, n) in item.projects" :key="n" type="text" size="small" class="m-0 mr-1 mb-1 p-0" @click="openProject(i)">{{ i.name }}</el-button></div>
                   <div><el-tag v-for="(tag,ind) in item.tags" :key="ind" type="info" size="mini" class="mr-1 mt-1">{{ tag }}</el-tag></div>
                 </el-timeline-item>
               </el-timeline>
@@ -92,15 +93,22 @@
         </div>
     </template>
     </div>
+    <el-dialog :title="projectName" :visible.sync="projectDialog" width="90vw" :before-close="closeProject">
+      <span>这是一段信息</span>
+    </el-dialog>
   </div>
-  <script src="./js/vue.js"></script>
-  <script src="./js/element-ui.js"></script>
+  <!-- <script src="./js/vue.js"></script>
+  <script src="./js/element-ui.js"></script> -->
+  <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script>
     new Vue({
       el: "#app",
       data() {
         return {
           loading: true,
+          projectDialog: false,
+          projectName: '',
           // selfDescription: '本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。待人友善，服从上级，做事尽心尽责，有较强团队精神。早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！',
           selfDescription: [
             '擅长根据业务需求，绘制各种UI原型图、UI高保真设计稿以及UX交互方案；',
@@ -148,7 +156,7 @@
               name: '普华永道商务服务(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
               content: '负责UI/UX设计及Web前端开发……',
-              projects: ['某报告管理系统', '某碳追踪管理系统', '某油田碳资产管理系统', '某几个地方政府小程序'],
+              projects: [ {id: 'pwc01', name: '某报告管理系统'},  {id: 'pwc02', name: '某碳追踪管理系统'},  {id: 'pwc03', name: '某油田碳资产管理系统'},  {id: 'pwc04', name: '某几个地方政府小程序'}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'Photoshop', 'Uni-App']
             },
             {
@@ -156,7 +164,7 @@
               name: '美数信息科技(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
               content: '负责UI/UX设计及Web前端开发；',
-              projects: ['某门禁机后台管理系统前端开发、App及小程序的UI设计等等……'],
+              projects: [ {id: 'meishu01', name: '某门禁系统后台管理系统'},  {id: 'meishu02', name: '门禁系统App及小程序'}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'JavaScript', 'Photoshop', 'illustrator']
             },
             {
@@ -164,7 +172,7 @@
               name: '上海思芮科技发展有限公司(东软集团)',
               subName: 'UI/UX设计 & Web前端开发',
               content: 'UI/UX设计及Web前端开发；',
-              projects: ['某电气公司风电云管理系统；某交易中心门户和管理系统开发等等……'],
+              projects: [ {id: 'neusoft01', name: '某电气集团风电云监控管理系统'},  {id: 'neusoft02', name: '某交易中心门户和管理系统'}],
               tags: ['Photoshop', 'Bootstrap', 'HTML+CSS', 'jQuery']
             },
             {
@@ -199,6 +207,14 @@
         }
       },
       methods: {
+        openProject (item) {
+          this.projectDialog = true
+          this.projectName = item.name
+          console.log(item.id)
+        },
+        closeProject () {
+          this.projectDialog = false
+        }
       },
       mounted () {
         this.loading = false

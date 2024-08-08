@@ -280,7 +280,9 @@ a:hover {
 
 .main .header>.left {
   position: relative;
-  width: 25%;
+  flex-basis: 25%;
+  flex-grow: 0;
+  flex-shrink: 0;
   height: 100%;
   background-color: var(--bg-color);
   box-sizing: border-box;
@@ -361,7 +363,9 @@ a:hover {
 
 .main .body>.left {
   box-sizing: border-box;
-  width: 25%;
+  flex-basis: 25%;
+  flex-grow: 0;
+  flex-shrink: 0;
   padding: 0.12rem 0.23rem 0.15rem 0.15rem;
   background-color: var(--bg-color);
   color: rgba(255, 255, 255, 0.6);
@@ -422,7 +426,7 @@ a:hover {
     max-width: 100%;
   }
   .main .left {
-    width: 33.33% !important;
+    flex-basis: 33.33% !important;
   }
 }
 
