@@ -15,76 +15,82 @@
 <body>
   <div id="app">
     <div class="main">
-      <div class="header">
-        <div class="left">
-          <div class="avatar">
-            <img src="./images/avatar.gif" alt="Frank Fang">
+      <div v-if="loading" style="text-align: center; height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <i class="fa fa-hourglass-1" style="color: #999; font-size: 96px;"></i>
+        <p style="margin-top: 14px; font-size: 24px;">页面加载中，请耐心等待……</p>
+      </div>
+      <template v-else>
+        <div class="header">
+          <div class="left">
+            <div class="avatar">
+              <img src="./images/avatar.gif" alt="Frank Fang">
+            </div>
           </div>
-        </div>
-        <div class="right">
-          <div class="person-info">
-            <h1><span style="color: #000;">方志刚</span> Frank Fang</h1>
-            <h2 class="text-primary">Web前端开发 & UI/UX设计</h2>
-            <div>
-              <el-popover placement="bottom" width="268" trigger="click">
-                <h4 class="m-0">微信号：<span class="text-primary">frankfang7</span></h4>
-                <div class="pt-4 pb-2" style="text-align: center;">
-                  <img src="./images/weixin.gif" alt="" width="198px">
-                  <div class="mt-2" style="color: #999;">扫一扫上面的二维码图案，加我为朋友。</div>
-                </div>
-                <span slot="reference" style="cursor: pointer;"><i class="fa fa-wechat fa-fw text-primary"></i> 17621440130</span>
-              </el-popover>
-              &nbsp; <a href="mailto:45112230@qq.com" target="_blank"><i class="fa fa-envelope fa-fw text-primary"></i> 45112230@qq.com</a>
-              &nbsp; <a href="https://frankfang7.github.io/resume" target="_blank"><i class="fa fa-star fa-fw text-primary"></i> frankfang7.github.io/resume</a>
+          <div class="right">
+            <div class="person-info">
+              <h1><span style="color: #000;">方志刚</span> Frank Fang</h1>
+              <h2 class="text-primary">Web前端开发 & UI/UX设计</h2>
+              <div>
+                <el-popover placement="bottom" width="268" trigger="click">
+                  <h4 class="m-0">微信号：<span class="text-primary">frankfang7</span></h4>
+                  <div class="pt-4 pb-2" style="text-align: center;">
+                    <img src="./images/weixin.gif" alt="" width="198px">
+                    <div class="mt-2" style="color: #999;">扫一扫上面的二维码图案，加我为朋友。</div>
+                  </div>
+                  <span slot="reference" style="cursor: pointer;"><i class="fa fa-wechat fa-fw text-primary"></i> 17621440130</span>
+                </el-popover>
+                &nbsp; <a href="mailto:45112230@qq.com" target="_blank"><i class="fa fa-envelope fa-fw text-primary"></i> 45112230@qq.com</a>
+                &nbsp; <a href="https://frankfang7.github.io/resume" target="_blank"><i class="fa fa-star fa-fw text-primary"></i> frankfang7.github.io/resume</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="body">
-        <div class="left">
-          <h3 class="heading mb-3"><i class="fa fa-id-card-o fa-fw"></i> 个人资料</h3>
-          <p class="ml-1 mr-1 mb-4" style="line-height: 180%;">
-            <i class="fa fa-birthday-cake fa-fw"></i> 1982年11月<br>
-            <i class="fa fa-users fa-fw"></i> 已婚已育<br>
-            <i class="fa fa-map-marker fa-fw"></i> 上海市闵行区<br>
-          </p>
-          <h3 class="heading mb-3"><i class="fa fa-desktop fa-fw"></i> 专业技能</h3>
-          <div class="ml-1 mr-1 mb-4">
-            <div v-for="(item, index) in skillList" :key="index" class="mb-2" :title="item.name + ':' + item.value + '%'">
-              <div class="mb-1">{{ item.name }}</div>
-              <el-progress :percentage="item.value" color="var(--primary-color)" define-back-color="rgba(255, 255, 255, 0.2)" :stroke-width="2" :show-text="false"></el-progress>
+        <div class="body">
+          <div class="left">
+            <h3 class="heading mb-3"><i class="fa fa-id-card-o fa-fw"></i> 个人资料</h3>
+            <p class="ml-1 mr-1 mb-4" style="line-height: 180%;">
+              <i class="fa fa-birthday-cake fa-fw"></i> 1982年11月<br>
+              <i class="fa fa-users fa-fw"></i> 已婚已育<br>
+              <i class="fa fa-map-marker fa-fw"></i> 上海市闵行区<br>
+            </p>
+            <h3 class="heading mb-3"><i class="fa fa-desktop fa-fw"></i> 专业技能</h3>
+            <div class="ml-1 mr-1 mb-4">
+              <div v-for="(item, index) in skillList" :key="index" class="mb-2" :title="item.name + ':' + item.value + '%'">
+                <div class="mb-1">{{ item.name }}</div>
+                <el-progress :percentage="item.value" color="var(--primary-color)" define-back-color="rgba(255, 255, 255, 0.2)" :stroke-width="2" :show-text="false"></el-progress>
+              </div>
+            </div>
+            <h3 class="heading mb-3"><i class="fa fa-comments-o fa-fw"></i> 自我评价</h3>
+            <ul class="m-1 p-0 pl-3">
+              <li v-for="(item, index) in selfDescription" :key="index" class="mb-1">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="right">
+            <div class="heading mb-3"><i class="fa fa-suitcase fa-fw"></i> 工作经验</div>
+            <div class="mt-2 mb-3">
+              <el-timeline class="pl-4">
+                <el-timeline-item v-for="(item,index) in workList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
+                  <h5 class="text-primary mt-0 mb-1">{{ item.date }}</h5>
+                  <h4 class="text-primary mt-0 mb-1"><span>{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
+                  <div v-if="item.content"><strong class="text-muted">工作内容：</strong> {{ item.content }}</div>
+                  <div v-if="item.projects"><strong class="text-muted">参与项目：</strong><el-button v-for="(i, n) in item.projects" :key="n" type="text" size="small" class="m-0 p-1">{{ i }}</el-button></div>
+                  <div><el-tag v-for="(tag,ind) in item.tags" :key="ind" type="info" size="mini" class="mr-1 mt-1">{{ tag }}</el-tag></div>
+                </el-timeline-item>
+              </el-timeline>
+            </div>
+            <div class="heading mb-3"><i class="fa fa-graduation-cap fa-fw"></i> 教育及培训</div>
+            <div class="mt-2 mb-3">
+              <el-timeline class="pl-4">
+                <el-timeline-item v-for="(item,index) in educationList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
+                  <h5 class="text-primary mt-0 mb-1">{{ item.date }}</h5>
+                  <h4 class="text-primary mt-0 mt-1 mb-1"><span class="text-primary">{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
+                  <div><strong class="text-muted">课程内容：</strong> {{ item.content }}</div>
+                </el-timeline-item>
+              </el-timeline>
             </div>
           </div>
-          <h3 class="heading mb-3"><i class="fa fa-comments-o fa-fw"></i> 自我评价</h3>
-          <ul class="m-1 p-0 pl-3">
-            <li v-for="(item, index) in selfDescription" :key="index" class="mb-1">{{ item }}</li>
-          </ul>
         </div>
-        <div class="right">
-          <div class="heading mb-3"><i class="fa fa-suitcase fa-fw"></i> 工作经验</div>
-          <div class="mt-2 mb-3">
-            <el-timeline class="pl-4">
-              <el-timeline-item v-for="(item,index) in workList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
-                <h5 class="text-primary mt-0 mb-1">{{ item.date }}</h5>
-                <h4 class="text-primary mt-0 mb-1"><span>{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
-                <div v-if="item.content"><strong class="text-muted">工作内容：</strong> {{ item.content }}</div>
-                <div v-if="item.projects"><strong class="text-muted">参与项目：</strong><el-button v-for="(i, n) in item.projects" :key="n" type="text" size="small" class="m-0 p-1">{{ i }}</el-button></div>
-                <div><el-tag v-for="(tag,ind) in item.tags" :key="ind" type="info" size="mini" class="mr-1 mt-1">{{ tag }}</el-tag></div>
-              </el-timeline-item>
-            </el-timeline>
-          </div>
-          <div class="heading mb-3"><i class="fa fa-graduation-cap fa-fw"></i> 教育及培训</div>
-          <div class="mt-2 mb-3">
-            <el-timeline class="pl-4">
-              <el-timeline-item v-for="(item,index) in educationList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
-                <h5 class="text-primary mt-0 mb-1">{{ item.date }}</h5>
-                <h4 class="text-primary mt-0 mt-1 mb-1"><span class="text-primary">{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
-                <div><strong class="text-muted">课程内容：</strong> {{ item.content }}</div>
-              </el-timeline-item>
-            </el-timeline>
-          </div>
-        </div>
-      </div>
+    </template>
     </div>
   </div>
   <script src="./js/vue.js"></script>
@@ -94,6 +100,7 @@
       el: "#app",
       data() {
         return {
+          loading: true,
           // selfDescription: '本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。待人友善，服从上级，做事尽心尽责，有较强团队精神。早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！',
           selfDescription: [
             '擅长根据业务需求，绘制各种UI原型图、UI高保真设计稿以及UX交互方案；',
@@ -192,6 +199,9 @@
         }
       },
       methods: {
+      },
+      mounted () {
+        this.loading = false
       }
     })
   </script>
