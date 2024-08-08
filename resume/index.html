@@ -26,55 +26,59 @@
             <h1><span style="color: #000;">方志刚</span> Frank Fang</h1>
             <h2 class="text-primary">Web前端开发 & UI/UX设计</h2>
             <div>
-              <el-popover placement="bottom" title="微信号：frankfang7" width="268" trigger="click">
-                <div class="p-4 pb-2" style="text-align: center;">
-                  <img src="./images/weixin.jpg" alt="" width="198px">
+              <el-popover placement="bottom" width="268" trigger="click">
+                <h4 class="m-0">微信号：<span class="text-primary">frankfang7</span></h4>
+                <div class="pt-4 pb-2" style="text-align: center;">
+                  <img src="./images/weixin.gif" alt="" width="198px">
                   <div class="mt-2" style="color: #999;">扫一扫上面的二维码图案，加我为朋友。</div>
                 </div>
-                <span slot="reference" style="cursor: pointer;"><i class="fa fa-wechat text-primary"></i>17621440130</span>
+                <span slot="reference" style="cursor: pointer;"><i class="fa fa-wechat fa-fw text-primary"></i>17621440130</span>
               </el-popover>
-              &nbsp; <a href="mailto:45112230@qq.com" target="_blank"><i class="fa fa-envelope text-primary"></i> 45112230@qq.com</a>
-              &nbsp; <a href="https://frankfang7.github.io/resume" target="_blank"><i class="fa fa-star text-primary"></i> frankfang7.github.io/resume</a>
+              &nbsp; <a href="mailto:45112230@qq.com" target="_blank"><i class="fa fa-envelope fa-fw text-primary"></i> 45112230@qq.com</a>
+              &nbsp; <a href="https://frankfang7.github.io/resume" target="_blank"><i class="fa fa-star fa-fw text-primary"></i> frankfang7.github.io/resume</a>
             </div>
           </div>
         </div>
       </div>
       <div class="body">
         <div class="left">
-          <h3 class="heading mb-3"><i class="fa fa-id-card-o"></i> 个人资料</h3>
-          <p class="ml-1 mr-1 mb-4">
-            <strong>出生：</strong>1982年11月<br>
-            <strong>户籍：</strong>上海市闵行区<br>
-            <strong>籍贯：</strong>湖北省鄂州市<br>
-            <strong>婚况：</strong>已婚已育</p>
-          <h3 class="heading mb-3"><i class="fa fa-desktop"></i> 专业技能</h3>
+          <h3 class="heading mb-3"><i class="fa fa-id-card-o fa-fw"></i> 个人资料</h3>
+          <p class="ml-1 mr-1 mb-4" style="line-height: 180%;">
+            <i class="fa fa-birthday-cake fa-fw"></i> 1982年11月<br>
+            <i class="fa fa-users fa-fw"></i> 已婚已育<br>
+            <i class="fa fa-map-marker fa-fw"></i> 上海市闵行区<br>
+          </p>
+          <h3 class="heading mb-3"><i class="fa fa-desktop fa-fw"></i> 专业技能</h3>
           <div class="ml-1 mr-1 mb-4">
-            <div v-for="(item, index) in skillList" :key="index" class="mb-3" :title="item.name + ':' + item.value + '%'">
+            <div v-for="(item, index) in skillList" :key="index" class="mb-2" :title="item.name + ':' + item.value + '%'">
               <div class="mb-1">{{ item.name }}</div>
               <el-progress :percentage="item.value" color="var(--primary-color)" define-back-color="rgba(255, 255, 255, 0.2)" :stroke-width="2" :show-text="false"></el-progress>
             </div>
           </div>
-          <h3 class="heading mb-3"><i class="fa fa-comments-o"></i> 自我评价</h3>
-          <p class="m-1">{{ selfComment }}</p>
+          <h3 class="heading mb-3"><i class="fa fa-comments-o fa-fw"></i> 自我评价</h3>
+          <ul class="m-1 p-0 pl-3">
+            <li v-for="(item, index) in selfDescription" :key="index" class="mb-1">{{ item }}</li>
+          </ul>
         </div>
         <div class="right">
-          <div class="heading mb-3"><i class="fa fa-suitcase"></i> 工作经验</div>
+          <div class="heading mb-3"><i class="fa fa-suitcase fa-fw"></i> 工作经验</div>
           <div class="mt-2 mb-3">
             <el-timeline class="pl-4">
-              <el-timeline-item v-for="item,index in workList" timestamp="" color="var(--primary-color)" class="pb-2">
+              <el-timeline-item v-for="(item,index) in workList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
                 <h5 class="text-primary mt-0 mb-1">{{ item.date }}</h5>
                 <h4 class="text-primary mt-0 mb-1"><span>{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
-                <p style="margin: 0;">{{ item.content }}</p>
+                <div class="mb-1">{{ item.content }}</div>
+                <div><el-tag v-for="(tag,ind) in item.tags" :key="ind" type="info" size="mini" class="mr-1">{{ tag }}</el-tag></div>
               </el-timeline-item>
             </el-timeline>
           </div>
-          <div class="heading mb-3"><i class="fa fa-graduation-cap"></i> 教育及培训</div>
+          <div class="heading mb-3"><i class="fa fa-graduation-cap fa-fw"></i> 教育及培训</div>
           <div class="mt-2 mb-3">
             <el-timeline class="pl-4">
-              <el-timeline-item v-for="item,index in educationList" timestamp="" color="var(--primary-color)" class="pb-2">
+              <el-timeline-item v-for="(item,index) in educationList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
                 <h5 class="text-primary mt-0 mb-1">{{ item.date }}</h5>
                 <h4 class="text-primary mt-0 mt-1 mb-1"><span class="text-primary">{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
-                <p class="mt-1 mb-1">{{ item.content }}</p>
+                <div>{{ item.content }}</div>
               </el-timeline-item>
             </el-timeline>
           </div>
@@ -89,18 +93,24 @@
       el: "#app",
       data() {
         return {
-          selfComment: '本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。待人友善，服从上级，做事尽心尽责，有较强团队精神。早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！',
+          // selfDescription: '本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。待人友善，服从上级，做事尽心尽责，有较强团队精神。早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！',
+          selfDescription: [
+            '擅长根据业务需求，绘制各种UI原型图、UI高保真设计稿以及UX交互方案；',
+            '擅长使用Vue全家桶 / ElementUI / JavaScript / ECharts等进行Web前端开发，尤其擅长样式/布局/响应式/交互等界面表现层的开发；',
+            '熟练使用Vue-Cli / Git等常用开发工具',
+            '精通Photoshop / illustrator从事设计工作，包括UI设计、CSS切图、VI设计、平面设计等；'
+          ],
           skillList: [
             {
               name: 'Vue.js',
               value: 80
             },
             {
-              name: 'Javascript',
+              name: 'JavaScript',
               value: 75
             },
             {
-              name: 'Element-ui',
+              name: 'Element-UI',
               value: 85
             },
             {
@@ -108,7 +118,7 @@
               value: 80
             },
             {
-              name: 'Uni-app',
+              name: 'Uni-App',
               value: 30
             },
             {
@@ -129,31 +139,36 @@
               date: '2020年3月 ~ 2024年8月',
               name: '普华永道商务服务(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
-              content: '工作内容：负责UI/UX设计及Web前端开发；主要参与项目：某报告管理系统；某碳追踪管理系统；某油田碳资产管理系统；某几个地方政府小程序等等……'
+              content: '工作内容：负责UI/UX设计及Web前端开发；主要参与项目：某报告管理系统；某碳追踪管理系统；某油田碳资产管理系统；某几个地方政府小程序等等……',
+              tags: ['Vue', 'Element-UI', 'ECharts', 'Photoshop', 'Uni-App']
             },
             {
               date: '2018年4月 ~ 2020年3月',
               name: '美数信息科技(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
-              content: '工作内容：负责UI/UX设计及Web前端开发；主要参与项目：某门禁机后台管理系统前端开发、APP及小程序的UI设计等等……'
+              content: '工作内容：负责UI/UX设计及Web前端开发；主要参与项目：某门禁机后台管理系统前端开发、App及小程序的UI设计等等……',
+              tags: ['Vue', 'Element-UI', 'ECharts', 'JavaScript', 'Photoshop', 'illustrator']
             },
             {
               date: '2015年9月 ~ 2018年4月',
               name: '上海思芮科技发展有限公司(东软集团)',
               subName: 'UI/UX设计 & Web前端开发',
-              content: '工作内容：UI/UX设计及Web前端开发；主要参与项目：某电气公司风电云管理系统；某交易中心门户和管理系统开发等等……'
+              content: '工作内容：UI/UX设计及Web前端开发；主要参与项目：某电气公司风电云管理系统；某交易中心门户和管理系统开发等等……',
+              tags: ['Photoshop', 'Bootstrap', 'HTML+CSS', 'jQuery']
             },
             {
               date: '2011年8月 ~ 2015年9月',
               name: '上海川合文化传播有限公司',
               subName: 'UI设计 & 网站美工',
-              content: '工作内容：各种Web页面、APP页面的设计、Flash动画设计制作等等……'
+              content: '工作内容：各种Web页面、App页面的设计、Flash动画设计制作等等……',
+              tags: ['Photoshop', 'illustrator', 'Flash', 'HTML+CSS', 'Bootstrap', 'jQuery']
             },
             {
               date: '2009年9月 ~ 2011年8月',
               name: '上海极越信息技术有限公司',
               subName: 'UI设计 & 网站美工 & 平面设计',
-              content: '工作内容：网页设计、Flash动画设计制作，网站美工(CSS+DIV切图)等等……'
+              content: '工作内容：网页设计、Flash动画设计制作，网站美工(CSS+DIV切图)等等……',
+              tags: ['Photoshop', 'illustrator', 'Flash', 'HTML+CSS', 'jQuery']
             }
           ],
           educationList: [
