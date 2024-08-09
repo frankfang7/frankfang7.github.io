@@ -47,26 +47,26 @@
         </div>
         <div class="body">
           <div class="left">
-            <h3 class="heading mb-3"><i class="fa fa-id-card-o fa-fw"></i> 个人资料</h3>
+            <h3 class="heading mt-2 mb-3"><i class="fa fa-id-card-o fa-fw"></i> 个人资料</h3>
             <p class="ml-1 mr-1 mb-4" style="line-height: 180%;">
               <i class="fa fa-birthday-cake fa-fw"></i> 1982年11月<br>
               <i class="fa fa-users fa-fw"></i> 已婚已育<br>
               <i class="fa fa-map-marker fa-fw"></i> 上海市闵行区<br>
             </p>
-            <h3 class="heading mb-3"><i class="fa fa-desktop fa-fw"></i> 专业技能</h3>
+            <h3 class="heading mt-2 mb-3"><i class="fa fa-desktop fa-fw"></i> 专业技能</h3>
             <div class="ml-1 mr-1 mb-4">
               <div v-for="(item, index) in skillList" :key="index" class="mb-2" :title="item.name + ':' + item.value + '%'">
                 <div class="mb-1">{{ item.name }}</div>
                 <el-progress :percentage="item.value" color="var(--primary-color)" define-back-color="rgba(255, 255, 255, 0.2)" :stroke-width="2" :show-text="false"></el-progress>
               </div>
             </div>
-            <h3 class="heading mb-3"><i class="fa fa-comments-o fa-fw"></i> 自我评价</h3>
+            <h3 class="heading mt-2 mb-3"><i class="fa fa-comments-o fa-fw"></i> 自我评价</h3>
             <ul class="m-1 p-0 pl-3">
               <li v-for="(item, index) in selfDescription" :key="index" class="mb-1">{{ item }}</li>
             </ul>
           </div>
           <div class="right">
-            <div class="heading mb-3"><i class="fa fa-suitcase fa-fw"></i> 工作经验</div>
+            <h3 class="heading mt-2 mb-3"><i class="fa fa-suitcase fa-fw"></i> 工作经验</h3>
             <div class="mt-2 mb-3">
               <el-timeline class="pl-4">
                 <el-timeline-item v-for="(item,index) in workList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
@@ -78,7 +78,7 @@
                 </el-timeline-item>
               </el-timeline>
             </div>
-            <div class="heading mb-3"><i class="fa fa-graduation-cap fa-fw"></i> 教育及培训</div>
+            <h3 class="heading mb-3"><i class="fa fa-graduation-cap fa-fw"></i> 教育及培训</h3>
             <div class="mt-2 mb-3">
               <el-timeline class="pl-4">
                 <el-timeline-item v-for="(item,index) in educationList" :key="index" timestamp="" color="var(--primary-color)" class="pb-2">
@@ -154,14 +154,14 @@
               name: '普华永道商务服务(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
               content: '根据业务需求设计原型图、UI/UX设计稿，参与Web前端开发……',
-              projects: [{name: '某ESG报告管理系统', imageList: ['rt/001.jpg', 'rt/002.jpg', 'rt/003.jpg', 'rt/004.jpg', 'rt/005.jpg', 'rt/006.jpg', 'rt/101.jpg', 'rt/102.jpg', 'rt/103.jpg', 'rt/104.jpg', 'rt/105.jpg', 'rt/106.jpg']},  {name: '某可持续解决方案', imageList: ['et/001.jpg', 'et/002.jpg', 'et/003.jpg', 'et/101.jpg', 'et/102.jpg', 'et/103.jpg', 'et/104.jpg', 'et/105.jpg', 'et/106.jpg']},  {name: '某油田碳资产管理系统', imageList: ['tanzichan/001.jpg']},  {id: 'pwc04', name: '其它项目', imageList: ['pwc/001.jpg', 'pwc/002.jpg']}],
+              projects: [{name: '某ESG报告管理系统', imageList: ['rt/001.jpg', 'rt/002.jpg', 'rt/003.jpg', 'rt/004.jpg', 'rt/005.jpg', 'rt/006.jpg', 'rt/101.jpg', 'rt/102.jpg', 'rt/103.jpg', 'rt/104.jpg', 'rt/105.jpg', 'rt/106.jpg']},  {name: '某可持续解决方案', imageList: ['et/001.jpg', 'et/002.jpg', 'et/003.jpg', 'et/101.jpg', 'et/102.jpg', 'et/103.jpg', 'et/104.jpg', 'et/105.jpg', 'et/106.jpg']},  {name: '某碳资产管理系统', imageList: ['tanzichan/001.jpg']},  {id: 'pwc04', name: '其它项目', imageList: ['pwc/001.jpg', 'pwc/002.jpg']}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'Photoshop', 'Uni-App']
             },
             {
               date: '2018年4月 ~ 2020年3月',
               name: '美数信息科技(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
-              content: '负责UI/UX设计、平面设计及Web前端开发；',
+              content: '负责各项目的UI/UX设计、平面设计及Web前端开发；',
               projects: [{name: '某智能警务系统', imageList: ['jingwu/001.jpg', 'jingwu/002.jpg', 'jingwu/003.jpg', 'jingwu/004.jpg', 'jingwu/005.jpg']}, {name: '某智慧门禁管理系统', imageList: ['menjin/001.png', 'menjin/002.png', 'menjin/003.png', 'menjin/004.png', 'menjin/005.png', 'menjin/006.png', 'menjin/007.png', 'menjin/008.png', 'menjin/101.jpg', 'menjin/102.jpg']}, {name: '其它项目', imageList: ['meishu/001.jpg', 'meishu/002.jpg', 'meishu/003.jpg', 'meishu/004.jpg']}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'JavaScript', 'Photoshop', 'illustrator']
             },
@@ -169,7 +169,7 @@
               date: '2015年9月 ~ 2018年4月',
               name: '上海思芮科技发展有限公司(东软集团)',
               subName: 'UI/UX设计 & Web前端开发',
-              content: 'UI/UX设计及Web前端开发；',
+              content: '负责各项目的UI/UX设计及Web前端开发；',
               projects: [{name: '某电气集团风电智能监控系统', imageList: ['fengyun/001.png', 'fengyun/002.png', 'fengyun/003.png', 'fengyun/004.png', 'fengyun/005.png', 'fengyun/006.png']},  {name: '某交易中心门户和管理系统', imageList: ['suzhou/001.png', 'suzhou/002.png', 'suzhou/003.png', 'suzhou/004.png']}],
               tags: ['Photoshop', 'Bootstrap', 'HTML+CSS', 'jQuery']
             },
@@ -177,7 +177,7 @@
               date: '2011年8月 ~ 2015年9月',
               name: '上海川合文化传播有限公司',
               subName: 'UI设计 & 网站美工',
-              content: '各种Web页面、App页面的设计、Flash动画设计制作等等……',
+              content: '负责各种Web和App的页面设计、网页制作(CSS+DIV)，Flash动画设计制作等等……',
               projects: [{name: '某交易所相关项目', imageList: ['shangjiaosuo/001.png', 'shangjiaosuo/002.png', 'shangjiaosuo/003.png', 'shangjiaosuo/004.png', 'shangjiaosuo/005.png', 'shangjiaosuo/006.png', 'shangjiaosuo/007.png']}],
               tags: ['Photoshop', 'illustrator', 'Flash', 'HTML+CSS', 'Bootstrap', 'jQuery']
             },
@@ -185,7 +185,7 @@
               date: '2009年9月 ~ 2011年8月',
               name: '上海极越信息技术有限公司',
               subName: 'UI设计 & 网站美工 & 平面设计',
-              content: '网页设计、Flash动画设计制作，网站美工(CSS+DIV切图)等等……',
+              content: '负责各种网页设计，网站制作(CSS+DIV)、Flash动画设计制作等等……',
               tags: ['Photoshop', 'illustrator', 'Flash', 'HTML+CSS', 'jQuery']
             }
           ],
@@ -202,7 +202,7 @@
             {
               date: '2019年3月 ~ 2021年7月',
               name: '上海海事大学',
-              subName: '计算机科学与技术(专升本)',
+              subName: '计算机科学与技术(本科)',
               content: '电路与电子技术、数字逻辑、计算方法、计算机原理与汇编、微型计算机技术、计算机系统结构、计算机网络、高级语言、数据结构、操作系统、编译原理等……'
             }
           ]
