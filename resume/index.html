@@ -108,7 +108,6 @@
       data() {
         return {
           loading: true,
-          // selfDescription: '本人性格平和稳重、积极乐观，为人诚实守信，谦虚上进，品行正直。待人友善，服从上级，做事尽心尽责，有较强团队精神。早年主要从事UI/UX设计，近些年主要专注于Web前端开发工作。热爱设计，热爱开发，尤其对前端展现层兴趣浓厚，经验也比较丰富！',
           selfDescription: [
             '擅长根据业务需求，设计各种UI原型图、UI高保真设计稿以及UX交互方案；',
             '擅长使用Vue全家桶 / ElementUI / JavaScript / ECharts...进行Web前端开发，尤其擅长样式/布局/响应式/交互等界面表现层的开发；',
@@ -155,7 +154,7 @@
               name: '普华永道商务服务(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
               content: '负责UI/UX设计及Web前端开发……',
-              projects: [{name: '某报告管理系统', imageList: ['pwc/001.jpg', 'pwc/002.jpg']},  {name: '某碳追踪管理系统', imageList: ['pwc/101.jpg', 'pwc/102.jpg']},  {name: '某油田碳资产管理系统', imageList: ['pwc/201.jpg', 'pwc/202.jpg']},  {id: 'pwc04', name: '某几个地方政府小程序', imageList: ['pwc/301.jpg', 'pwc/302.jpg']}],
+              projects: [{name: '某ESG报告管理系统', imageList: ['rt/001.jpg', 'rt/002.jpg', 'rt/003.jpg', 'rt/004.jpg', 'rt/005.jpg', 'rt/006.jpg', 'rt/101.jpg', 'rt/102.jpg', 'rt/103.jpg', 'rt/104.jpg', 'rt/105.jpg', 'rt/106.jpg']},  {name: '某可持续解决方案', imageList: ['et/001.jpg', 'et/002.jpg', 'et/003.jpg', 'et/101.jpg', 'et/102.jpg', 'et/103.jpg', 'et/104.jpg', 'et/105.jpg', 'et/106.jpg']},  {name: '某油田碳资产管理系统', imageList: ['tanzichan/001.jpg']},  {id: 'pwc04', name: '其它...', imageList: ['pwc/001.jpg', 'pwc/002.jpg']}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'Photoshop', 'Uni-App']
             },
             {
@@ -163,7 +162,7 @@
               name: '美数信息科技(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
               content: '负责UI/UX设计及Web前端开发；',
-              projects: [ {name: '某门禁系统后台管理系统', imageList: ['meishu/001.jpg', 'meishu/002.jpg']},  {name: '门禁系统App及小程序', imageList: ['meishu/001.jpg', 'meishu/002.jpg']}],
+              projects: [{name: '某智能警务系统', imageList: ['jingwu/001.jpg', 'jingwu/002.jpg', 'jingwu/003.jpg', 'jingwu/004.jpg', 'jingwu/005.jpg']}, {name: '某智慧门禁管理系统', imageList: ['menjin/001.png', 'menjin/002.png', 'menjin/003.png', 'menjin/004.png', 'menjin/005.png', 'menjin/006.png', 'menjin/007.png', 'menjin/008.png', 'menjin/101.jpg', 'menjin/102.jpg']}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'JavaScript', 'Photoshop', 'illustrator']
             },
             {
@@ -171,7 +170,7 @@
               name: '上海思芮科技发展有限公司(东软集团)',
               subName: 'UI/UX设计 & Web前端开发',
               content: 'UI/UX设计及Web前端开发；',
-              projects: [ {name: '某电气集团风电智能监控系统', imageList: ['neusoft/001.png', 'neusoft/002.png', 'neusoft/003.png', 'neusoft/004.png', 'neusoft/005.png', 'neusoft/006.png']},  {name: '某交易中心门户和管理系统', imageList: ['neusoft/101.jpg', 'neusoft/102.jpg']}],
+              projects: [{name: '某电气集团风电智能监控系统', imageList: ['fengyun/001.png', 'fengyun/002.png', 'fengyun/003.png', 'fengyun/004.png', 'fengyun/005.png', 'fengyun/006.png']},  {name: '某交易中心门户和管理系统', imageList: ['suzhou/001.png', 'suzhou/002.png', 'suzhou/003.png', 'suzhou/004.png']}],
               tags: ['Photoshop', 'Bootstrap', 'HTML+CSS', 'jQuery']
             },
             {
@@ -179,6 +178,7 @@
               name: '上海川合文化传播有限公司',
               subName: 'UI设计 & 网站美工',
               content: '各种Web页面、App页面的设计、Flash动画设计制作等等……',
+              projects: [{name: '某交易所相关项目', imageList: ['shangjiaosuo/001.png', 'shangjiaosuo/002.png', 'shangjiaosuo/003.png', 'shangjiaosuo/004.png', 'shangjiaosuo/005.png', 'shangjiaosuo/006.png', 'shangjiaosuo/007.png']}],
               tags: ['Photoshop', 'illustrator', 'Flash', 'HTML+CSS', 'Bootstrap', 'jQuery']
             },
             {
@@ -216,6 +216,8 @@
         },
         closeProject () {
           this.projectDialog = false
+          this.projectName = ''
+          this.projectUrlList = []
         }
       },
       mounted () {

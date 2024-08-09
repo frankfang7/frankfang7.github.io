@@ -438,3 +438,23 @@ a:hover {
 .el-button--text:focus, .el-button--text:hover {
   color: rgba(var(--primary-rgb), 0.8)
 }
+
+.el-dialog {
+  width: calc(100vw - 30px) !important;
+  max-width: 1200px !important;
+}
+
+@media (max-width: 768px) {
+  .el-dialog {
+    margin-top: 15vh !important;
+  }
+}
+
+.el-dialog__body .el-carousel {
+  height: 60vw;
+  max-height: 690px;
+}
+
+.el-dialog__body .el-carousel .el-carousel__container {
+  height: calc(100% - 40px) !important;
+}
