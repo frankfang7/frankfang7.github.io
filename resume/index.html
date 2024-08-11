@@ -95,7 +95,11 @@
     <el-dialog :title="projectName" :visible.sync="projectDialog" width="860px" top="5vh" :before-close="closeProject">
       <el-carousel indicator-position="outside" height="460px" :interval="5000">
         <el-carousel-item v-for="item in projectUrlList" :key="item">
-          <el-image :src="'./images/projects/' + item" fit="contain" alt="图片加载较慢，敬请耐心等待……"></el-image>
+          <el-image :src="'./images/projects/' + item" fit="contain">
+            <div slot="placeholder" class="image-slot">
+              图片加载较慢，敬请耐心等待……<span class="dot">...</span>
+            </div>
+          </el-image>
         </el-carousel-item>
       </el-carousel>
     </el-dialog>
