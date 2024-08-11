@@ -74,7 +74,7 @@
                   <h4 class="text-primary mt-0 mb-1"><span>{{ item.name }}</span> <small style="font-weight: normal;">| {{ item.subName }}</small></h4>
                   <div v-if="item.content" class="mb-1"><strong class="text-muted">工作内容：</strong> {{ item.content }}</div>
                   <div v-if="item.projects"><strong class="text-muted">参与项目：</strong> <el-button v-for="(i, n) in item.projects" :key="n" type="text" size="small" class="m-0 mr-1 mb-1 p-0" @click="openProject(i)">{{ i.name }}</el-button></div>
-                  <div><el-tag v-for="(tag,ind) in item.tags" :key="ind" type="info" size="mini" class="mr-1 mt-1">{{ tag }}</el-tag></div>
+                  <div><strong class="text-muted">使用技术：</strong><el-tag v-for="(tag,ind) in item.tags" :key="ind" type="info" size="mini" class="mr-1 mt-1">{{ tag }}</el-tag></div>
                 </el-timeline-item>
               </el-timeline>
             </div>
@@ -95,7 +95,7 @@
     <el-dialog :title="projectName" :visible.sync="projectDialog" width="860px" top="5vh" :before-close="closeProject">
       <el-carousel indicator-position="outside" height="460px" :interval="5000">
         <el-carousel-item v-for="item in projectUrlList" :key="item">
-          <el-image :src="'./images/projects/' + item" fit="contain"></el-image>
+          <el-image :src="'./images/projects/' + item" fit="contain" alt="图片加载较慢，敬请耐心等待……"></el-image>
         </el-carousel-item>
       </el-carousel>
     </el-dialog>
@@ -153,15 +153,15 @@
               date: '2020年3月 ~ 2024年8月',
               name: '普华永道商务服务(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
-              content: '根据业务需求设计原型图、UI/UX设计稿，参与Web前端开发……',
-              projects: [{name: '某ESG报告管理系统', imageList: ['rt/001.webp', 'rt/002.webp', 'rt/003.webp', 'rt/004.webp', 'rt/005.webp', 'rt/006.webp', 'rt/101.webp', 'rt/102.webp', 'rt/103.webp', 'rt/104.webp', 'rt/105.webp', 'rt/106.webp']},  {name: '某可持续解决方案', imageList: ['et/001.webp', 'et/002.webp', 'et/003.webp', 'et/101.webp', 'et/102.webp', 'et/103.webp', 'et/104.webp', 'et/105.webp', 'et/106.webp']},  {name: '某碳资产管理系统', imageList: ['tanzichan/001.webp']},  {id: 'pwc04', name: '其它项目', imageList: ['pwc/001.webp', 'pwc/002.webp']}],
+              content: '负责各项目的UI/UX设计；主导Web前端页的整体样式、风格统一。主要参与开发的业务模块包括：图表展示、数据大屏展示、数据填报、角色管理、用户管理、部门管理、数据集管理、PCF碳足迹数据收集及展示、计算结果追踪、数据预警等……',
+              projects: [{name: '某ESG报告管理系统', imageList: ['rt/001.webp', 'rt/002.webp', 'rt/003.webp', 'rt/004.webp', 'rt/005.webp', 'rt/006.webp', 'rt/101.webp', 'rt/102.webp', 'rt/103.webp', 'rt/104.webp', 'rt/105.webp', 'rt/106.webp']},  {name: '某碳排放追踪系统', imageList: ['et/001.webp', 'et/002.webp', 'et/003.webp', 'et/101.webp', 'et/102.webp', 'et/103.webp', 'et/104.webp', 'et/105.webp', 'et/106.webp']},  {name: '某碳资产管理系统', imageList: ['tanzichan/001.webp']},  {id: 'pwc04', name: '其它项目', imageList: ['pwc/001.webp', 'pwc/002.webp']}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'Photoshop', 'Uni-App']
             },
             {
               date: '2018年4月 ~ 2020年3月',
               name: '美数信息科技(上海)有限公司',
               subName: 'Web前端开发 & UI/UX设计',
-              content: '负责各项目的UI/UX设计、平面设计及Web前端开发；',
+              content: '负责各项目的UI/UX设计、平面设计及Web前端开发。主要参与开发的业务模块包括：仪表盘、物业看板、房屋管理、居民管理、居民身份信息读取、门禁设备管理、广告发布管理、数据看板等……',
               projects: [{name: '某智能警务系统', imageList: ['jingwu/001.webp', 'jingwu/002.webp', 'jingwu/003.webp', 'jingwu/004.webp']}, {name: '某智慧门禁管理系统', imageList: ['menjin/001.webp', 'menjin/002.webp', 'menjin/003.webp', 'menjin/004.webp', 'menjin/005.webp', 'menjin/006.webp', 'menjin/007.webp', 'menjin/008.webp']}, {name: '其它项目', imageList: ['meishu/001.webp', 'meishu/002.webp', 'meishu/003.webp', 'meishu/004.webp']}],
               tags: ['Vue', 'Element-UI', 'ECharts', 'JavaScript', 'Photoshop', 'illustrator']
             },
